@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nova_Square } from "next/font/google";
+import { rootMetadata } from "@/utils/rootMetaData";
 import "./globals.css";
 
 export const novaSquare = Nova_Square({
@@ -8,10 +9,7 @@ export const novaSquare = Nova_Square({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  title: "Richard Senger - Personal Website",
-  description: "This is the personal website of Richard Senger, a software engineer and music enthusiast.",
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -24,6 +22,7 @@ export default function RootLayout({
         className={`${novaSquare.variable} antialiased`}
       >
         {children}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="770296fb-0158-468b-909c-48e1880fcd1e"/>
       </body>
     </html>
   );
