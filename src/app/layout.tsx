@@ -12,6 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="Sw_DWhQ-nzH2s1kwZQNhkV-tDoHeVH1mWAaMSLKvev4" />
+      </head>
       <body
         className={`${novaSquare.variable} antialiased`}
       >
