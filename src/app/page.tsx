@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { novaSquare } from "./layout";
+import { novaSquare } from "@/utils/fonts";
 
 export default function Home() {
   return (

@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Nova_Square } from "next/font/google";
 import { rootMetadata } from "@/utils/rootMetaData";
+import { novaSquare } from "@/utils/fonts";
 import "./globals.css";
-
-export const novaSquare = Nova_Square({
-  variable: "--font-nova-square",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = rootMetadata;
 
