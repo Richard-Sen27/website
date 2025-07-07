@@ -5,10 +5,25 @@
   --foreground: #ededed;
 }
 
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
 @theme inline {
+
+  --animate-rotate-border: border-rotate 3s linear infinite;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-nova: var(--font-nova-square);
+
+  @keyframes border-rotate {
+    to {
+      --border-angle: 360deg;
+    }
+  }
 }
 
 body {
