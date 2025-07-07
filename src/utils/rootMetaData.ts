@@ -13,6 +13,15 @@ export const rootMetadata: Metadata = {
     "Portfolio",
   ],
   metadataBase: new URL("https://dev.richard-senger.com"),
+  icons: {
+    icon: [{ url: "/code-icon_1024.png", type: "image/png", }],
+    apple: [{ url: "/code-icon_1024.png", type: "image/png", }]
+  },
+  appleWebApp: {
+    statusBarStyle: "black-translucent",
+    capable: true,
+    startupImage: [{ url: "/code-icon_1024.png", }]
+  },
   openGraph: {
     title: "Richard Senger – Software Engineer",
     description:
@@ -21,9 +30,9 @@ export const rootMetadata: Metadata = {
     siteName: "Richard Senger",
     images: [
       {
-        url: "/black-white-face.webp", // Place this image in your /public folder
-        width: 1474,
-        height: 1476,
+        url: "/code-icon_1024.png", // Place this image in your /public folder
+        width: 1024,
+        height: 1024,
         alt: "Richard Senger – Software Engineer",
       },
     ],
@@ -35,12 +44,7 @@ export const rootMetadata: Metadata = {
     title: "Richard Senger – Software Engineer",
     description:
       "Web Development · Machine Learning · Engineering Portfolio",
-    images: ["/black-white-face.webp"],
+    images: ["/code-icon_1024.png"],
     creator: "@RichardSen27",
-  },
-  themeColor: "#000000",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
   },
 };
