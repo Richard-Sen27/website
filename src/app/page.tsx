@@ -1,13 +1,21 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/home/HeroSection";
-import QuoteSection from "@/components/home/QuoteSection";
-import TechStack from "@/components/home/TechStack";
+import AboutSection from "@/components/home/AboutSection";
+import SkillsSection from "@/components/home/SkillsSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
+import ContactSection from "@/components/home/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="h-screen overflow-scroll bg-black snap-y snap-mandatory">
+    <main className="min-h-screen bg-mesh">
+      <Navbar />
       <HeroSection />
-      <QuoteSection />
-      <TechStack />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

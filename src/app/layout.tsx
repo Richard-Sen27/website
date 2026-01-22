@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { rootMetadata } from "@/utils/rootMetaData";
-import { novaSquare } from "@/utils/fonts";
+import { inter, novaSquare } from "@/utils/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = rootMetadata;
@@ -11,12 +11,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <head>
         <meta name="google-site-verification" content="Sw_DWhQ-nzH2s1kwZQNhkV-tDoHeVH1mWAaMSLKvev4" />
       </head>
       <body
-        className={`${novaSquare.variable} antialiased scroll-smooth`}
+        className={`${inter.variable} ${novaSquare.variable} antialiased scroll-smooth font-[family-name:var(--font-inter)]`}
       >
         {children}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="770296fb-0158-468b-909c-48e1880fcd1e"/>
