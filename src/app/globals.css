@@ -1,46 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors - Elegant Blue */
-  --primary-color: #2563eb;
-  --primary-light: #3b82f6;
-  --primary-dark: #1d4ed8;
+  /* Primary Colors - Icon Blue Gradient */
+  --primary-color: #67a3f9;
+  --primary-light: #93c5fd;
+  --primary-dark: #3b7ff0;
   
-  /* Background Colors - Neutral Dark */
-  --background: #09090b;
-  --background-secondary: #18181b;
+  /* Background Colors - Deep Tech Dark */
+  --background: #0a0a0a;
+  --background-secondary: #151515;
   --foreground: #fafafa;
-  --foreground-muted: #a1a1aa;
+  --foreground-muted: #a5adb0;
   
-  /* Accent Colors */
-  --accent-color: #3b82f6;
-  --accent-secondary: #1d4ed8;
+  /* Accent Colors - Cyan from icon */
+  --accent-color: #22d3ee;
+  --accent-secondary: #06b6d4;
   
   /* Glass Effect Colors */
   --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(255, 255, 255, 0.12);
-  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --glass-bg-hover: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(165, 173, 176, 0.1);
+  --glass-border-hover: rgba(165, 173, 176, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
   
-  /* Gradient Colors - Blue monochromatic */
-  --gradient-start: #3b82f6;
-  --gradient-mid: #2563eb;
-  --gradient-end: #1d4ed8;
+  /* Gradient Colors - Icon gradient */
+  --gradient-start: #93c5fd;
+  --gradient-mid: #67a3f9;
+  --gradient-end: #22d3ee;
+  
+  /* Tag/Secondary gradient */
+  --tag-gradient-start: #a5adb0;
+  --tag-gradient-end: #45484a;
 }
 
 /* Light mode overrides */
 [data-theme="light"] {
-  --background: #fafafa;
-  --background-secondary: #f4f4f5;
-  --foreground: #18181b;
-  --foreground-muted: #52525b;
+  --background: #ffffff;
+  --background-secondary: #f8f9fa;
+  --foreground: #0a0a0a;
+  --foreground-muted: #6c757d;
   
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-hover: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.06);
-  --glass-border-hover: rgba(0, 0, 0, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-hover: rgba(0, 0, 0, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
 }
 
 @property --border-angle {
@@ -79,6 +83,7 @@
   --color-glass-shadow: var(--glass-shadow);
 
   --font-inter: var(--font-inter);
+  --font-milonga: var(--font-milonga);
 
   @keyframes border-rotate {
     to {
@@ -146,8 +151,9 @@ body {
 /* Background gradient mesh */
 .bg-mesh {
   background: 
-    radial-gradient(ellipse at 20% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 20%, rgba(103, 163, 249, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(147, 197, 253, 0.03) 0%, transparent 60%),
     var(--background);
 }
 
@@ -159,7 +165,7 @@ body {
   border: 1px solid var(--glass-border);
   box-shadow: 
     0 8px 32px var(--glass-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    inset 0 1px 0 rgba(147, 197, 253, 0.03);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -169,7 +175,8 @@ body {
   transform: translateY(-2px);
   box-shadow: 
     0 16px 32px var(--glass-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 0 24px rgba(103, 163, 249, 0.08),
+    inset 0 1px 0 rgba(147, 197, 253, 0.08);
 }
 
 /* Glass button */
@@ -237,16 +244,50 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--glass-border);
+  background: linear-gradient(180deg, var(--tag-gradient-start), var(--tag-gradient-end));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground-muted);
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
 }
 
 /* Selection */
 ::selection {
-  background: rgba(37, 99, 235, 0.3);
+  background: rgba(103, 163, 249, 0.3);
   color: var(--foreground);
+}
+
+/* Tech accent lines */
+.tech-line {
+  background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+  height: 1px;
+}
+
+/* Scanline effect for tech vibe (optional) */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(103, 163, 249, 0.02) 50%,
+    transparent 100%
+  );
+  animation: scanline 8s linear infinite;
+  opacity: 0.3;
+  z-index: 9999;
 }

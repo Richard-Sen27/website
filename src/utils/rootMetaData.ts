@@ -23,7 +23,7 @@ export const rootMetadata: Metadata = {
     startupImage: [{ url: "/code-icon_1024.png", }]
   },
   openGraph: {
-    title: "Richard Senger – Software Engineer",
+    title: "Richard Senger - Software Engineer",
     description:
       "Web Development · Machine Learning · Engineering Portfolio",
     url: "https://dev.richard-senger.com",
@@ -33,7 +33,7 @@ export const rootMetadata: Metadata = {
         url: "/code-icon_1024.png", // Place this image in your /public folder
         width: 1024,
         height: 1024,
-        alt: "Richard Senger – Software Engineer",
+        alt: "Richard Senger - Software Engineer",
       },
     ],
     locale: "en_US",
