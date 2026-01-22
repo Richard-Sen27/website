@@ -99,22 +99,19 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="py-4 space-y-2">
-                {navLinks.map((link, index) => (
-                  <motion.a
+              <div className="py-4 space-y-1">
+                {navLinks.map((link) => (
+                  <a
                     key={link.name}
                     href={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-3 text-foreground-muted hover:text-foreground hover:bg-glass-bg-hover rounded-xl transition-all duration-200"
+                    className="block px-4 py-3 text-foreground-muted hover:text-foreground rounded-xl transition-colors duration-200"
                   >
                     {link.name}
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </motion.div>
