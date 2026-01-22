@@ -71,7 +71,7 @@ export default function ContactSection() {
                   href="mailto:richard.senger27@icloud.com"
                   className="flex items-center gap-4 text-foreground-muted hover:text-foreground transition-colors duration-200 group"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 group-hover:from-primary/30 group-hover:to-primary/10 transition-colors duration-200">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors duration-200">
                     <svg
                       className="w-5 h-5 text-primary"
                       fill="none"
@@ -98,9 +98,9 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-foreground-muted hover:text-foreground transition-colors duration-200 group"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-accent-secondary/20 to-accent-secondary/5 group-hover:from-accent-secondary/30 group-hover:to-accent-secondary/10 transition-colors duration-200">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors duration-200">
                     <svg
-                      className="w-5 h-5 text-accent-secondary"
+                      className="w-5 h-5 text-primary"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -119,9 +119,9 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-foreground-muted hover:text-foreground transition-colors duration-200 group"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-accent/10 transition-colors duration-200">
+                  <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors duration-200">
                     <svg
-                      className="w-5 h-5 text-accent"
+                      className="w-5 h-5 text-primary"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -139,7 +139,7 @@ export default function ContactSection() {
             {/* Availability */}
             <div className="glass-card rounded-3xl p-6">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
                 <span className="font-medium">Available for opportunities</span>
               </div>
               <p className="text-sm text-foreground-muted">
