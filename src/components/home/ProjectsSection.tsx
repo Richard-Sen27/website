@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { milonga } from "@/utils/fonts";
 
 interface Project {
   title: string;
@@ -60,7 +61,7 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+            Featured <span className={"gradient-text " + milonga.className}>Projects</span>
           </h2>
           <p className="text-foreground-muted max-w-2xl mx-auto">
             A selection of projects I&apos;ve worked on. Each one represents a unique 

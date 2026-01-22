@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { milonga } from "@/utils/fonts";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Get in <span className="gradient-text">Touch</span>
+            Get in <span className={"gradient-text " + milonga.className}>Touch</span>
           </h2>
           <p className="text-foreground-muted max-w-2xl mx-auto">
             Have a question or want to work together? Feel free to reach out!
