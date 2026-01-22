@@ -1,46 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors */
-  --primary-color: #3b82f6;
-  --primary-light: #60a5fa;
-  --primary-dark: #2563eb;
+  /* Primary Colors - Warm Amber/Gold */
+  --primary-color: #d97706;
+  --primary-light: #f59e0b;
+  --primary-dark: #b45309;
   
-  /* Background Colors */
-  --background: #0a0a0f;
-  --background-secondary: #111118;
-  --foreground: #f1f5f9;
-  --foreground-muted: #94a3b8;
+  /* Background Colors - Deep Warm Charcoal */
+  --background: #0c0a09;
+  --background-secondary: #1c1917;
+  --foreground: #fafaf9;
+  --foreground-muted: #a8a29e;
   
   /* Accent Colors */
-  --accent-color: #22d3ee;
-  --accent-secondary: #8b5cf6;
+  --accent-color: #ea580c;
+  --accent-secondary: #c2410c;
   
   /* Glass Effect Colors */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(255, 255, 255, 0.15);
-  --glass-shadow: rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
   
-  /* Gradient Colors */
-  --gradient-start: #3b82f6;
-  --gradient-mid: #8b5cf6;
-  --gradient-end: #22d3ee;
+  /* Gradient Colors - Warm monochromatic */
+  --gradient-start: #f59e0b;
+  --gradient-mid: #d97706;
+  --gradient-end: #ea580c;
 }
 
 /* Light mode overrides */
 [data-theme="light"] {
-  --background: #f8fafc;
-  --background-secondary: #f1f5f9;
-  --foreground: #0f172a;
-  --foreground-muted: #475569;
+  --background: #fafaf9;
+  --background-secondary: #f5f5f4;
+  --foreground: #1c1917;
+  --foreground-muted: #57534e;
   
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-bg-hover: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-border-hover: rgba(255, 255, 255, 0.7);
-  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(0, 0, 0, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.08);
 }
 
 @property --border-angle {
@@ -146,9 +146,8 @@ body {
 /* Background gradient mesh */
 .bg-mesh {
   background: 
-    radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(34, 211, 238, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse at 20% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(234, 88, 12, 0.05) 0%, transparent 50%),
     var(--background);
 }
 
@@ -167,11 +166,10 @@ body {
 .glass-card:hover {
   background: var(--glass-bg-hover);
   border-color: var(--glass-border-hover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 
-    0 20px 40px var(--glass-shadow),
-    0 0 40px rgba(59, 130, 246, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 16px 32px var(--glass-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Glass button */
@@ -186,7 +184,6 @@ body {
 .glass-button:hover {
   background: var(--glass-bg-hover);
   border-color: var(--glass-border-hover);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
 /* Gradient text */
@@ -250,6 +247,6 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(217, 119, 6, 0.3);
   color: var(--foreground);
 }
