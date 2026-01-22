@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { milonga } from "@/utils/fonts";
 import Image from "next/image";
 
 interface Skill {
@@ -61,7 +62,7 @@ export default function SkillsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Technical <span className="gradient-text">Skills</span>
+            Technical <span className={"gradient-text " + milonga.className}>Skills</span>
           </h2>
           <p className="text-foreground-muted max-w-2xl mx-auto">
             Technologies and tools I work with to bring ideas to life.

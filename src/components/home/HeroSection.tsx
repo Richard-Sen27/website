@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { milonga } from "@/utils/fonts";
 
 export default function HeroSection() {
   return (
@@ -29,7 +30,7 @@ export default function HeroSection() {
         {/* Name */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
           Hi, I&apos;m{" "}
-          <span className="gradient-text">Richard Senger</span>
+          <span className={"gradient-text whitespace-nowrap " + milonga.className}>Richard Senger</span>
         </h1>
 
         {/* Title */}

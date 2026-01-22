@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { milonga } from "@/utils/fonts";
 
 export default function AboutSection() {
   return (
@@ -15,7 +16,7 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            About <span className="gradient-text">Me</span>
+            About <span className={"gradient-text " + milonga.className}>Me</span>
           </h2>
           <p className="text-foreground-muted max-w-2xl mx-auto">
             Get to know me better — my journey, passion, and what drives me forward.

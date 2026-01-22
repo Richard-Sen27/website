@@ -35,6 +35,11 @@ export default function Navbar() {
           ? "glass-card !rounded-none border-x-0 border-t-0"
           : "bg-transparent"
       }`}
+      style={{
+        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        willChange: 'backdrop-filter',
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
