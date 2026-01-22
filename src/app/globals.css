@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors - Warm Amber/Gold */
-  --primary-color: #d97706;
-  --primary-light: #f59e0b;
-  --primary-dark: #b45309;
+  /* Primary Colors - Elegant Blue */
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
   
-  /* Background Colors - Deep Warm Charcoal */
-  --background: #0c0a09;
-  --background-secondary: #1c1917;
-  --foreground: #fafaf9;
-  --foreground-muted: #a8a29e;
+  /* Background Colors - Neutral Dark */
+  --background: #09090b;
+  --background-secondary: #18181b;
+  --foreground: #fafafa;
+  --foreground-muted: #a1a1aa;
   
   /* Accent Colors */
-  --accent-color: #ea580c;
-  --accent-secondary: #c2410c;
+  --accent-color: #3b82f6;
+  --accent-secondary: #1d4ed8;
   
   /* Glass Effect Colors */
   --glass-bg: rgba(255, 255, 255, 0.02);
@@ -23,18 +23,18 @@
   --glass-border-hover: rgba(255, 255, 255, 0.12);
   --glass-shadow: rgba(0, 0, 0, 0.4);
   
-  /* Gradient Colors - Warm monochromatic */
-  --gradient-start: #f59e0b;
-  --gradient-mid: #d97706;
-  --gradient-end: #ea580c;
+  /* Gradient Colors - Blue monochromatic */
+  --gradient-start: #3b82f6;
+  --gradient-mid: #2563eb;
+  --gradient-end: #1d4ed8;
 }
 
 /* Light mode overrides */
 [data-theme="light"] {
-  --background: #fafaf9;
-  --background-secondary: #f5f5f4;
-  --foreground: #1c1917;
-  --foreground-muted: #57534e;
+  --background: #fafafa;
+  --background-secondary: #f4f4f5;
+  --foreground: #18181b;
+  --foreground-muted: #52525b;
   
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-bg-hover: rgba(255, 255, 255, 0.85);
@@ -146,8 +146,8 @@ body {
 /* Background gradient mesh */
 .bg-mesh {
   background: 
-    radial-gradient(ellipse at 20% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(234, 88, 12, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
     var(--background);
 }
 
@@ -247,6 +247,6 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(217, 119, 6, 0.3);
+  background: rgba(37, 99, 235, 0.3);
   color: var(--foreground);
 }

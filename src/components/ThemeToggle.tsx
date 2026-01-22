@@ -53,7 +53,7 @@ export default function ThemeToggle() {
 
         {/* Moon Icon */}
         <motion.svg
-          className="absolute inset-0 text-amber-400"
+          className="absolute inset-0 text-blue-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
