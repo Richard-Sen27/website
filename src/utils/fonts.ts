@@ -1,4 +1,10 @@
-import { Nova_Square } from "next/font/google";
+import { Inter, Nova_Square } from "next/font/google";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const novaSquare = Nova_Square({
   variable: "--font-nova-square",
@@ -6,4 +12,4 @@ const novaSquare = Nova_Square({
   weight: "400",
 });
 
-export { novaSquare };
+export { inter, novaSquare };
