@@ -68,7 +68,7 @@ export default function ContactSection() {
               <h3 className="font-semibold text-lg mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:richard.senger27@icloud.com"
+                  href="mailto:contact@richard-senger.com"
                   className="flex items-center gap-4 text-foreground-muted hover:text-foreground transition-colors duration-200 group"
                 >
                   <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors duration-200">
@@ -88,7 +88,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-xs text-foreground-muted">Email</p>
-                    <p className="text-sm">richard.senger27@icloud.com</p>
+                    <p className="text-sm">contact@richard-senger.com</p>
                   </div>
                 </a>
 

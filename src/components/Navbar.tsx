@@ -39,8 +39,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold gradient-text">
-            RS
+          <a href="#home" className="flex items-center gap-1.5">
+            <span className="text-zinc-500 text-2xl leading-none">&lt;</span>
+            <span className="text-2xl leading-none font-[family-name:var(--font-milonga)] gradient-text">RS</span>
+            <span className="text-zinc-500 text-2xl leading-none">/&gt;</span>
           </a>
 
           {/* Desktop Navigation */}

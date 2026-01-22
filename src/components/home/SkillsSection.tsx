@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 interface Skill {
   name: string;
@@ -140,9 +141,11 @@ export default function SkillsSection() {
                 whileHover={{ scale: 1.1, y: -4 }}
                 className="glass-button p-3 rounded-xl group relative"
               >
-                <img
+                <Image
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
                   alt={tech.name}
+                  width={64}
+                  height={64}
                   className="w-8 h-8"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

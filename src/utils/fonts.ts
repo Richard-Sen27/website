@@ -1,4 +1,4 @@
-import { Inter, Nova_Square } from "next/font/google";
+import { Inter, Nova_Square, Milonga } from "next/font/google";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -12,4 +12,10 @@ const novaSquare = Nova_Square({
   weight: "400",
 });
 
-export { inter, novaSquare };
+const milonga = Milonga({
+  variable: "--font-milonga",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+export { inter, novaSquare, milonga };

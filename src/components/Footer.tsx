@@ -30,7 +30,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:richard.senger27@icloud.com"
+              href="mailto:contact@richard-senger.com"
               className="text-foreground-muted hover:text-foreground transition-colors duration-200"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
