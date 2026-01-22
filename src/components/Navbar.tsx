@@ -21,8 +21,19 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      // Close mobile menu when resizing to desktop view (md breakpoint = 768px)
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -31,13 +42,13 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass-card !rounded-none border-x-0 border-t-0"
-          : "bg-transparent"
+        isScrolled || isMobileMenuOpen
+          ? "bg-[var(--glass-bg)] border-b border-[var(--glass-border)] shadow-[0_8px_32px_var(--glass-shadow),inset_0_1px_0_rgba(147,197,253,0.03)]"
+          : "bg-transparent border-b border-transparent"
       }`}
       style={{
-        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-        WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        backdropFilter: isScrolled || isMobileMenuOpen ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: isScrolled || isMobileMenuOpen ? 'blur(20px)' : 'none',
         willChange: 'backdrop-filter',
       }}
     >
