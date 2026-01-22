@@ -50,15 +50,15 @@ export default function AboutSection() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-glass-border">
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl font-bold gradient-text">3+</p>
+                    <p className="text-2xl sm:text-3xl font-bold gradient-text">5+</p>
                     <p className="text-xs sm:text-sm text-foreground-muted">Years Coding</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl font-bold gradient-text">10+</p>
+                    <p className="text-2xl sm:text-3xl font-bold gradient-text">20+</p>
                     <p className="text-xs sm:text-sm text-foreground-muted">Projects</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl sm:text-3xl font-bold gradient-text">5+</p>
+                    <p className="text-2xl sm:text-3xl font-bold gradient-text">15+</p>
                     <p className="text-xs sm:text-sm text-foreground-muted">Technologies</p>
                   </div>
                 </div>
