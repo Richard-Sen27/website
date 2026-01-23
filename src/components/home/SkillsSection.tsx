@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { milonga } from "@/utils/fonts";
 import Image from "next/image";
@@ -41,6 +41,9 @@ const categories = [
   { id: "tools", label: "Tools" },
   { id: "ai", label: "AI/ML" },
 ];
+
+// Animation duration for skill badge appearance (in seconds)
+const ANIMATION_DURATION = 0.3;
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -93,27 +96,30 @@ export default function SkillsSection() {
         </motion.div>
 
         {/* Skills as Tags */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3"
+        <div 
+          className="relative transition-all duration-300"
+          style={{ minHeight: '100px' }}
         >
-          {filteredSkills.map((skill, index) => (
-            <motion.span
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
-              viewport={{ once: true }}
-              layout
-              className="px-4 py-2 rounded-full text-sm font-medium glass-card cursor-default"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: ANIMATION_DURATION }}
+              className="flex flex-wrap justify-center gap-3"
             >
-              {skill.name}
-            </motion.span>
-          ))}
-        </motion.div>
+              {filteredSkills.map((skill) => (
+                <span
+                  key={skill.name}
+                  className="px-4 py-2 rounded-full text-sm font-medium glass-card cursor-default"
+                >
+                  {skill.name}
+                </span>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* Tech Stack Icons */}
         <motion.div
