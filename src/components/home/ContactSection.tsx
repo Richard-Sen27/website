@@ -9,23 +9,52 @@ export default function ContactSection() {
     name: "",
     email: "",
     message: "",
+    consent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitted(false), 5000);
+    if (!formData.consent) {
+      setError("Please consent to data processing before submitting.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "", consent: false });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -34,6 +63,13 @@ export default function ContactSection() {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      consent: e.target.checked,
     }));
   };
 
@@ -215,6 +251,50 @@ export default function ContactSection() {
                     placeholder="Your message..."
                   />
                 </div>
+
+                {/* GDPR Consent Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formData.consent}
+                    onChange={handleCheckboxChange}
+                    required
+                    className="mt-1 w-4 h-4 rounded border-glass-border text-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  />
+                  <label htmlFor="consent" className="text-sm text-foreground-muted">
+                    I consent to the processing of my personal data (name, email, message) for the purpose of responding to my inquiry. Your data will be processed securely and will not be shared with third parties. You can request deletion of your data at any time by contacting{" "}
+                    <a href="mailto:contact@richard-senger.com" className="text-primary hover:underline">
+                      contact@richard-senger.com
+                    </a>
+                    .
+                  </label>
+                </div>
+
+                {/* Error Message */}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-start gap-2 text-red-500 text-sm p-3 rounded-lg bg-red-500/10 border border-red-500/20"
+                  >
+                    <svg
+                      className="w-5 h-5 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{error}</span>
+                  </motion.div>
+                )}
 
                 <motion.button
                   type="submit"
