@@ -103,10 +103,10 @@ export default function ProjectsSection() {
             >
               <div className="glass-card rounded-3xl overflow-hidden h-full flex flex-col">
                 {/* Project Image Placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-primary/10 via-accent-secondary/10 to-accent/10 overflow-hidden">
+                <div className="relative h-48 bg-linear-to-br from-primary/10 via-accent-secondary/10 to-accent/10 overflow-hidden">
                   {/* Decorative Elements */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/30 to-accent-secondary/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 rounded-2xl bg-linear-to-br from-primary/30 to-accent-secondary/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg
                         className="w-10 h-10 text-white/80"
                         fill="none"
@@ -124,12 +124,12 @@ export default function ProjectsSection() {
                   </div>
                   
                   {/* Gradient Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Featured Badge */}
                   {project.featured && (
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-primary to-accent-secondary text-white">
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-linear-to-r from-primary to-accent-secondary text-white">
                         Featured
                       </span>
                     </div>
@@ -158,7 +158,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-glass-border min-h-[2.5rem]">
+                  <div className="flex items-center gap-3 pt-4 border-t border-glass-border min-h-10">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}

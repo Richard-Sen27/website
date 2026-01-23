@@ -16,7 +16,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="Sw_DWhQ-nzH2s1kwZQNhkV-tDoHeVH1mWAaMSLKvev4" />
       </head>
       <body
-        className={`${inter.variable} ${novaSquare.variable} ${milonga.variable} antialiased scroll-smooth font-[family-name:var(--font-inter)]`}
+        className={`${inter.variable} ${novaSquare.variable} ${milonga.variable} antialiased scroll-smooth font-inter`}
       >
         {children}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="770296fb-0158-468b-909c-48e1880fcd1e"/>

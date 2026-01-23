@@ -50,7 +50,7 @@ export default function HeroSection() {
             href="#projects"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-primary to-accent-secondary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+            className="px-6 py-3 rounded-2xl bg-linear-to-r from-primary to-accent-secondary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
           >
             View My Work
           </motion.a>
@@ -109,7 +109,7 @@ export default function HeroSection() {
         className="relative"
       >
         {/* Glow Effect */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-accent-secondary to-accent blur-3xl opacity-20 animate-pulse-glow" />
+        <div className="absolute inset-0 rounded-full bg-linear-to-r from-primary via-accent-secondary to-accent blur-3xl opacity-20 animate-pulse-glow" />
         
         {/* Profile Image Container */}
         <div className="relative gradient-border rounded-full p-1 animate-rotate-border">

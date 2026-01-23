@@ -43,7 +43,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? "bg-[var(--glass-bg)] border-b border-[var(--glass-border)] shadow-[0_8px_32px_var(--glass-shadow),inset_0_1px_0_rgba(147,197,253,0.03)]"
+          ? "bg-glass-bg border-b border-glass-border shadow-[0_8px_32px_var(--glass-shadow),inset_0_1px_0_rgba(147,197,253,0.03)]"
           : "bg-transparent border-b border-transparent"
       }`}
       style={{
@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-1.5">
             <span className="text-zinc-500 text-2xl leading-none">&lt;</span>
-            <span className="text-2xl leading-none font-[family-name:var(--font-milonga)] gradient-text">RS</span>
+            <span className="text-2xl leading-none font-milonga gradient-text">RS</span>
             <span className="text-zinc-500 text-2xl leading-none">/&gt;</span>
           </a>
 
