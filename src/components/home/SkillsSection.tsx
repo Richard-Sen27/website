@@ -143,9 +143,8 @@ export default function SkillsSection() {
               { name: "Docker", icon: "docker" },
               { name: "Git", icon: "git" },
             ].map((tech) => (
-              <motion.div
+              <div
                 key={tech.name}
-                whileHover={{ scale: 1.1, y: -4 }}
                 className="glass-button p-3 rounded-xl group relative"
               >
                 <Image
@@ -163,7 +162,7 @@ export default function SkillsSection() {
                 <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1 rounded-lg bg-background-secondary border border-glass-border text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50 pointer-events-none">
                   {tech.name}
                 </span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
