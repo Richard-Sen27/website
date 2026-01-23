@@ -10,10 +10,10 @@ function isRateLimited(email: string): boolean {
   const now = Date.now();
   const submissions = recentSubmissions.get(email) || [];
   
-  // Remove submissions older than 1 hour
-  const recentOnes = submissions.filter((time) => now - time < 3600000);
+  // Remove submissions older than 2 hours
+  const recentOnes = submissions.filter((time) => now - time < 3600000 * 2);
   
-  // Allow max 3 submissions per hour
+  // Allow max 3 submissions per 2 hours
   if (recentOnes.length >= 3) {
     return true;
   }
