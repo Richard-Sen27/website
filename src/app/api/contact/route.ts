@@ -96,70 +96,164 @@ export async function POST(request: NextRequest) {
         <html>
           <head>
             <meta charset="utf-8">
+            <meta name="color-scheme" content="light dark">
+            <meta name="supported-color-schemes" content="light dark">
             <style>
               * { margin: 0; padding: 0; box-sizing: border-box; }
+              
+              :root {
+                color-scheme: light dark;
+                supported-color-schemes: light dark;
+              }
+              
               body { 
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
                 line-height: 1.6; 
-                color: #1a1a1a;
-                background: #f5f5f5;
-                padding: 40px 20px;
+                color: #0a0a0a;
+                background: #ffffff;
+                padding: 48px 20px;
               }
+              
               .container { 
-                max-width: 560px; 
+                max-width: 600px; 
                 margin: 0 auto; 
-                background: white;
-                border-radius: 2px;
+                background: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 24px;
                 overflow: hidden;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
               }
+              
               .content { 
-                padding: 40px;
+                padding: 48px 40px;
               }
-              .message-header {
+              
+              .header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 40px;
+              }
+              
+              .dot {
+                width: 8px;
+                height: 8px;
+                background: linear-gradient(135deg, #93c5fd, #67a3f9);
+                border-radius: 50%;
+              }
+              
+              .header-text {
                 font-size: 13px;
-                color: #666;
-                margin-bottom: 24px;
-                letter-spacing: 0.3px;
-              }
-              .from {
-                font-size: 24px;
                 font-weight: 600;
-                color: #1a1a1a;
-                margin-bottom: 4px;
+                color: #6c757d;
+                letter-spacing: 0.5px;
               }
-              .email {
-                font-size: 15px;
-                color: #666;
+              
+              .from {
+                font-size: 32px;
+                font-weight: 700;
+                background: linear-gradient(135deg, #93c5fd, #67a3f9, #22d3ee);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 8px;
+                letter-spacing: -0.8px;
+              }
+              
+              .email-address {
+                font-size: 16px;
+                color: #6c757d;
+                margin-bottom: 48px;
+              }
+              
+              .message-box {
+                background: #f8f9fa;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: 16px;
+                padding: 32px;
                 margin-bottom: 32px;
               }
+              
               .message {
                 font-size: 16px;
                 line-height: 1.7;
-                color: #2a2a2a;
+                color: #0a0a0a;
                 white-space: pre-wrap;
-                padding: 24px;
-                background: #fafafa;
-                border-radius: 2px;
-                border-left: 2px solid #e0e0e0;
               }
-              .meta {
-                margin-top: 40px;
-                padding-top: 24px;
-                border-top: 1px solid #e8e8e8;
+              
+              .footer {
+                display: flex;
+                align-items: center;
+                gap: 8px;
                 font-size: 12px;
-                color: #999;
+                color: #a5adb0;
+                padding-top: 32px;
+                border-top: 1px solid rgba(0, 0, 0, 0.06);
+              }
+              
+              .footer-icon {
+                width: 14px;
+                height: 14px;
+                opacity: 0.5;
+              }
+              
+              @media (prefers-color-scheme: dark) {
+                body {
+                  color: #fafafa;
+                  background: #0a0a0a;
+                }
+                
+                .container {
+                  background: rgba(255, 255, 255, 0.02);
+                  border: 1px solid rgba(165, 173, 176, 0.1);
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+                }
+                
+                .header-text {
+                  color: #a5adb0;
+                }
+                
+                .email-address {
+                  color: #a5adb0;
+                }
+                
+                .message-box {
+                  background: rgba(255, 255, 255, 0.02);
+                  border: 1px solid rgba(165, 173, 176, 0.08);
+                }
+                
+                .message {
+                  color: #fafafa;
+                }
+                
+                .footer {
+                  border-top: 1px solid rgba(165, 173, 176, 0.08);
+                  color: #6c757d;
+                }
               }
             </style>
           </head>
           <body>
             <div class="container">
               <div class="content">
-                <div class="message-header">NEW MESSAGE FROM WEBSITE</div>
+                <div class="header">
+                  <div class="dot"></div>
+                  <span class="header-text">NEW MESSAGE</span>
+                </div>
+                
                 <div class="from">${sanitizedName}</div>
-                <div class="email">${sanitizedEmail}</div>
-                <div class="message">${sanitizedMessage}</div>
-                <div class="meta">${new Date().toLocaleString("en-US", { timeZone: "UTC", dateStyle: "long", timeStyle: "short" })} UTC</div>
+                <div class="email-address">${sanitizedEmail}</div>
+                
+                <div class="message-box">
+                  <div class="message">${sanitizedMessage}</div>
+                </div>
+                
+                <div class="footer">
+                  <svg class="footer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>${new Date().toLocaleString("en-US", { timeZone: "UTC", dateStyle: "long", timeStyle: "short" })} UTC</span>
+                </div>
               </div>
             </div>
           </body>
