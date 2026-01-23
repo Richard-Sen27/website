@@ -45,7 +45,7 @@ const projects: Project[] = [
     description:
       "A modern, glassmorphism-styled personal portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light mode, smooth animations, and responsive design.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    githubUrl: "https://github.com/richard-sen27",
+    githubUrl: "https://github.com/richard-sen27/website",
     featured: false,
     // No liveUrl
   },

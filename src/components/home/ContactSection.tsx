@@ -264,7 +264,7 @@ export default function ContactSection() {
                     className="mt-1 w-4 h-4 rounded border-glass-border text-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                   />
                   <label htmlFor="consent" className="text-sm text-foreground-muted">
-                    I consent to the processing of my personal data (name, email, message) for the purpose of responding to my inquiry. Your data will be processed securely and will not be shared with third parties. You can request deletion of your data at any time by contacting{" "}
+                    I consent to the processing of my personal data (name, email, message) for the purpose of responding to my inquiry. Your data will be processed securely and shared only with necessary service providers (email delivery) to fulfill this purpose. You can request deletion of your data at any time by contacting{" "}
                     <a href="mailto:contact@richard-senger.com" className="text-primary hover:underline">
                       contact@richard-senger.com
                     </a>
