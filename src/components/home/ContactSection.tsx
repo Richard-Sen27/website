@@ -280,7 +280,7 @@ export default function ContactSection() {
                     className="flex items-start gap-2 text-red-500 text-sm p-3 rounded-lg bg-red-500/10 border border-red-500/20"
                   >
                     <svg
-                      className="w-5 h-5 flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -301,7 +301,7 @@ export default function ContactSection() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-accent-secondary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 rounded-xl bg-linear-to-r from-primary to-accent-secondary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">

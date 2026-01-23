@@ -14,7 +14,7 @@ export default function QuoteSection() {
       >
         {/* Opening quotation mark */}
         <span
-          className={`self-start md:-translate-x-1/2 text-7xl md:text-9xl font-bold -mb-8 md:-mb-14 bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 text-transparent bg-clip-text`}
+          className={`self-start md:-translate-x-1/2 text-7xl md:text-9xl font-bold -mb-8 md:-mb-14 bg-linear-to-r from-blue-300 via-blue-500 to-cyan-400 text-transparent bg-clip-text`}
           aria-hidden="true"
         >
           &ldquo;
@@ -27,7 +27,7 @@ export default function QuoteSection() {
 
         {/* Closing quotation mark */}
         <span
-          className={`self-end md:translate-x-1/2 text-7xl md:text-9xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 text-transparent bg-clip-text`}
+          className={`self-end md:translate-x-1/2 text-7xl md:text-9xl font-bold bg-linear-to-r from-blue-300 via-blue-500 to-cyan-400 text-transparent bg-clip-text`}
           aria-hidden="true"
         >
           &rdquo;

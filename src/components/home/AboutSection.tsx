@@ -35,8 +35,8 @@ export default function AboutSection() {
           >
             <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
               {/* Decorative gradient */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary/20 to-transparent rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-linear-to-tr from-accent/20 to-transparent rounded-full blur-2xl" />
               
               <div className="relative z-10 space-y-6">
                 {/* Quote */}
