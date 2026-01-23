@@ -15,37 +15,58 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Diploma Project: ERP Scipio",
+    description:
+      "Military ERP system developed in cooperation with a German startup. Next.js frontend, PostgreSQL database, Java Spring Boot backend. Team of 5.",
+    tags: ["Next.js", "PostgreSQL", "Java", "Spring Boot", "ERP", "Team Project"],
+    featured: true,
+    // No githubUrl or liveUrl
+  },
+  {
+    title: "NavigAI-tors",
+    description:
+      "AI-driven container ship route calculation. Winning project of the Austrian National AI Championship 2024.",
+    tags: ["AI", "Route Optimization", "Shipping", "Championship Winner", "2024"],
+    featured: true,
+    liveUrl: "https://navigaitors.app",
+    // No githubUrl
+  },
+  {
+    title: "Volkstanzverband Burgenland Web Page",
+    description:
+      "Public web page for 'Volkstanzverband Burgenland' built with Next.js and Strapi CMS. Migrated from WordPress to a custom-hosted solution.",
+    tags: ["Next.js", "Strapi", "CMS", "Migration", "Web Development"],
+    featured: false,
+    liveUrl: "https://web.infra.volkstanzverband-burgenland.at",
+    // No githubUrl
+  },
+  {
     title: "Portfolio Website",
     description:
       "A modern, glassmorphism-styled personal portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light mode, smooth animations, and responsive design.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     githubUrl: "https://github.com/richard-sen27",
-    featured: true,
-  },
-  {
-    title: "Machine Learning Project",
-    description:
-      "A deep learning project exploring neural network architectures for image classification and natural language processing tasks using PyTorch.",
-    tags: ["Python", "PyTorch", "Machine Learning", "Deep Learning"],
-    githubUrl: "https://github.com/richard-sen27",
-    featured: true,
-  },
-  {
-    title: "Web Application",
-    description:
-      "Full-stack web application with React frontend, Node.js backend, and PostgreSQL database. Features user authentication, real-time updates, and responsive UI.",
-    tags: ["React", "Node.js", "PostgreSQL", "REST API"],
-    githubUrl: "https://github.com/richard-sen27",
     featured: false,
+    // No liveUrl
   },
-  {
-    title: "DevOps Pipeline",
-    description:
-      "Automated CI/CD pipeline setup with Docker containerization, GitHub Actions, and cloud deployment. Streamlines development workflow and ensures code quality.",
-    tags: ["Docker", "CI/CD", "GitHub Actions", "Linux"],
-    githubUrl: "https://github.com/richard-sen27",
-    featured: false,
-  },
+  // {
+  //   title: "Machine Learning Project",
+  //   description:
+  //     "A deep learning project exploring neural network architectures for image classification and natural language processing tasks using PyTorch.",
+  //   tags: ["Python", "PyTorch", "Machine Learning", "Deep Learning"],
+  //   githubUrl: "https://github.com/richard-sen27",
+  //   featured: false,
+  //   // No liveUrl
+  // },
+  // {
+  //   title: "DevOps Pipeline",
+  //   description:
+  //     "Automated CI/CD pipeline setup with Docker containerization, GitHub Actions, and cloud deployment. Streamlines development workflow and ensures code quality.",
+  //   tags: ["Docker", "CI/CD", "GitHub Actions", "Linux"],
+  //   githubUrl: "https://github.com/richard-sen27",
+  //   featured: false,
+  //   // No liveUrl
+  // },
 ];
 
 export default function ProjectsSection() {
@@ -137,7 +158,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-glass-border">
+                  <div className="flex items-center gap-3 pt-4 border-t border-glass-border min-h-[2.5rem]">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
@@ -173,6 +194,9 @@ export default function ProjectsSection() {
                         </svg>
                         Live Demo
                       </a>
+                    )}
+                    {!project.githubUrl && !project.liveUrl && (
+                      <span className="text-xs text-foreground-muted italic opacity-60">No public links available</span>
                     )}
                   </div>
                 </div>
