@@ -47,20 +47,20 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-2">
           <motion.a
-            href="#projects"
+            href="#contact"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="px-6 py-3 rounded-2xl bg-linear-to-r from-primary to-accent-secondary text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
           >
-            View My Work
+            Get in Touch
           </motion.a>
           <motion.a
-            href="#contact"
+            href="#projects"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="glass-button px-6 py-3 rounded-2xl font-medium hover:border-glass-border-hover"
-          >
-            Get in Touch
+            >
+              View My Work
           </motion.a>
         </div>
 

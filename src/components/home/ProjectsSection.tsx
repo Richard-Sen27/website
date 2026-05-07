@@ -41,14 +41,21 @@ const projects: Project[] = [
     // No githubUrl
   },
   {
-    title: "Portfolio Website",
-    description:
-      "A modern, glassmorphism-styled personal portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light mode, smooth animations, and responsive design.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    githubUrl: "https://github.com/richard-sen27/website",
+    title: "Compliance Intelligence Platform",
+    description: "CIP is an automated compliance platform that securely connects to your internal data sources to map how sensitive data flows through your organization. It then uses AI to automatically generate, track, and score required compliance documents—eliminating the need for manual audits.",
+    tags: ["AI","Compliance", "Hackathon"],
     featured: false,
-    // No liveUrl
-  },
+    liveUrl: "https://devpost.com/software/cip-compliance-intelligence-platform?ref_content=user-portfolio&ref_feature=in_progress"
+  }
+  // {
+  //   title: "Portfolio Website",
+  //   description:
+  //     "A modern, glassmorphism-styled personal portfolio built with Next.js, Tailwind CSS, and Framer Motion. Features dark/light mode, smooth animations, and responsive design.",
+  //   tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+  //   githubUrl: "https://github.com/richard-sen27/website",
+  //   featured: false,
+  //   // No liveUrl
+  // },
   // {
   //   title: "Machine Learning Project",
   //   description:
