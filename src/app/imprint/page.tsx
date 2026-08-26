@@ -54,16 +54,11 @@ export default async function ImprintPage() {
           />
         </LegalSection>
 
+        {/* No UID, Gewerbeanmeldung, supervisory authority or WKO entry: this
+            is a private site, not a registered trade. Add those rows back here
+            and in the YAML if that ever changes. */}
         <LegalSection heading={copy.get("businessDetails.heading")}>
-          <DetailList
-            items={[
-              ["Purpose", copy.get("businessDetails.purpose")],
-              ["VAT ID", copy.get("businessDetails.vatId")],
-              ["Registration", copy.get("businessDetails.registration")],
-              ["Supervisory authority", copy.get("businessDetails.authority")],
-              ["Chamber", copy.get("businessDetails.chamber")],
-            ]}
-          />
+          <Paragraphs text={copy.get("businessDetails.purpose")} />
         </LegalSection>
 
         <LegalSection heading={copy.get("disclaimer.heading")}>
