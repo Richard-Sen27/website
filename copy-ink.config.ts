@@ -60,6 +60,19 @@ export default defineConfig({
           description: "Client, course or event this was built for",
         },
         featured: { type: "boolean", label: "Show on homepage" },
+        // Drives the filter on /projects. Deliberately a short fixed list:
+        // filtering by raw tags produced 26 buttons for 7 projects, most of
+        // which isolated a single card.
+        category: {
+          type: "select",
+          label: "Category",
+          required: true,
+          options: [
+            { label: "AI & machine learning", value: "AI & ML" },
+            { label: "Web platforms", value: "Web platforms" },
+            { label: "Open source", value: "Open source" },
+          ],
+        },
         cover: { type: "image", label: "Cover image" },
         liveUrl: { type: "text", label: "Live URL" },
         codeUrl: { type: "text", label: "Source URL" },

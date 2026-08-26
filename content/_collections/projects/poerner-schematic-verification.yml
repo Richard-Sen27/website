@@ -3,6 +3,7 @@ summary: >-
   Full-stack tool for Pörner GmbH that cross-checks building schematics against
   equipment lists and flags missing or corrupted documents, replacing a manual
   verification process with a custom OCR pipeline.
+category: "AI & ML"
 year: "2025"
 role: "Full-stack engineer"
 context: "Client project for Pörner GmbH"

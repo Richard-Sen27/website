@@ -3,6 +3,7 @@ summary: >-
   Connects to a company's mail, file servers and code repositories, maps what
   personal data they actually hold, and generates the GDPR documentation that
   describes it. Built at OpenHack Vienna.
+category: "AI & ML"
 year: "2026"
 role: "Engineer"
 context: "OpenHack Vienna"

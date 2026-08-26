@@ -3,6 +3,7 @@ summary: >-
   ERP system for military logistics, built for the German startup Scipio
   Networks GmbH as our diploma project. Next.js frontend, Java services,
   PostgreSQL. Team of five.
+category: "Web platforms"
 year: "2026"
 role: "Full-stack engineer"
 context: "Diploma project · Scipio Networks GmbH"

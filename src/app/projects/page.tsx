@@ -6,7 +6,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ProjectFilter from "@/components/projects/ProjectFilter";
 import Reveal from "@/components/motion/Reveal";
 import { Eyebrow } from "@/components/ui";
-import { stringList } from "@/lib/content";
+import { field } from "@/lib/content";
 import { breadcrumbSchema } from "@/lib/jsonld";
 import { metadataForScope } from "@/lib/seo";
 
@@ -24,7 +24,7 @@ export default async function ProjectsPage() {
 
   const entries = projects.map((project) => ({
     slug: project.slug,
-    tags: stringList(project, "tags"),
+    category: field(project, "category"),
     card: <ProjectCard item={project} />,
   }));
 
