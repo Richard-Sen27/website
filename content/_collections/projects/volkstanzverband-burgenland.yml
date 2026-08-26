@@ -4,7 +4,7 @@ summary: >-
   self-hosted Next.js site with Strapi CMS, so the committee can publish without
   a developer in the loop.
 year: "2025"
-role: "Webmaster — solo developer"
+role: "Webmaster and solo developer"
 context: "Volkstanzverband Burgenland"
 liveUrl: "https://web.infra.volkstanzverband-burgenland.at"
 
@@ -17,19 +17,18 @@ tags:
   - "Client work"
 
 problem: |
-  The association's WordPress site had become slow and awkward to maintain, and
-  the people who actually needed to publish events depended on someone else to
-  do it for them.
+  The association's WordPress site had got slow and awkward to maintain, and the
+  people who actually needed to publish events had to ask someone else to do it
+  for them.
 
 approach: |
   A Next.js frontend against a self-hosted Strapi instance, with the content
-  modelled around what the committee actually publishes — events, groups,
-  announcements — rather than around WordPress pages.
+  modelled around what the committee actually publishes, so events, groups and
+  announcements rather than WordPress pages.
 
-  Hosted on Hetzner infrastructure, containerised with Docker and managed
-  through Dokploy, which keeps the running cost low and the deployment
-  reproducible.
+  It runs on Hetzner, containerised with Docker and managed through Dokploy,
+  which keeps the running cost low and the deployment repeatable.
 
 outcome: |
-  The committee publishes directly. I was elected webmaster of the association
-  and continue to maintain it.
+  The committee now publishes directly. I was elected webmaster of the
+  association and still maintain the site.

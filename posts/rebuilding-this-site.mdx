@@ -1,36 +1,36 @@
 ---
 title: "Rebuilding this site on Next.js 16 and GSAP"
-description: "Why I moved from one long scrolling page to a real multi-page site, and what the rebuild changed about performance, indexing and how content gets edited."
+description: "Why I moved from one long scrolling page to a proper multi-page site, and what that changed about performance, indexing and how the content gets edited."
 date: "2026-08-26"
 tags: ["Next.js", "GSAP", "Performance", "SEO"]
 ---
 
-The previous version of this site was a single route. Everything — hero, about,
-skills, projects, contact — lived in `app/page.tsx` as six sections stacked on
-top of each other, wired together with anchor links.
+The previous version of this site was a single route. Hero, about, skills,
+projects, contact: all six sections sat in `app/page.tsx`, stacked on top of
+each other and joined up with anchor links.
 
-It looked fine. It was also the wrong shape.
+It looked fine. It was still the wrong shape.
 
 ## One route is one page
 
-A scrolling one-pager gives a search engine exactly one URL, one title and one
-description to work with. Four projects and a handful of posts all collapse into
-the same document. There is nothing to rank individually, and nothing to link to
-except an anchor.
+A scrolling one-pager gives a search engine one URL, one title and one
+description to work with. Four projects and a handful of posts all collapse
+into the same document. There is nothing to rank separately, and nothing to
+link to except an anchor.
 
-Splitting into real routes means every project and every post gets its own URL,
-its own `<title>`, its own Open Graph card and its own entry in the sitemap.
-That is the whole reason for the rebuild — the visual refresh came along for the
-ride.
+Splitting it into real routes means every project and every post gets its own
+URL, its own `<title>`, its own Open Graph card and its own line in the
+sitemap. That was the actual reason for the rebuild. The visual refresh came
+along for the ride.
 
 ## Colour lives in exactly one file
 
-The old stylesheet had colour values scattered through it, and the contact email
-template had about twenty more hard-coded hexes that nothing else knew about.
-Changing the accent meant grepping.
+The old stylesheet had colour values scattered through it, and the contact
+email template had about twenty more hardcoded hexes that nothing else knew
+about. Changing the accent colour meant grepping for it.
 
-Now there is a two-layer token system in a single file. A palette layer holds
-raw values, a semantic layer maps them onto roles, and components only ever
+Now there is a two layer token system in a single file. A palette layer holds
+the raw values, a semantic layer maps them onto roles, and components only ever
 reference the roles:
 
 ```css
@@ -43,28 +43,30 @@ reference the roles:
 }
 ```
 
-A lint script fails the build on any hex, `rgb()`, or Tailwind palette utility
-found anywhere else, so the rule holds by itself rather than by discipline. For
-the surfaces that cannot read CSS custom properties — the email template, the
-generated OG images — a script parses the stylesheet and emits a TypeScript
-mirror with the values flattened to opaque hex.
+A lint script fails the build on any hex, `rgb()` or Tailwind palette utility
+found anywhere else, so the rule holds on its own rather than depending on me
+remembering it. For the places that cannot read CSS custom properties, like the
+email template and the generated OG images, a script parses the stylesheet and
+writes out a TypeScript mirror with the values flattened to opaque hex.
 
 ## Animation that degrades
 
-GSAP replaced Framer Motion. The rule I settled on: never tween a colour
-literal, tween a custom property instead, so animated states stay inside the
-token system.
+GSAP replaced Framer Motion. The rule I settled on is to never tween a colour
+literal and tween a custom property instead, which keeps animated states inside
+the token system:
 
 ```ts
 gsap.to(card, { "--spotlight-opacity": 1, duration: 0.35 });
 ```
 
-Every timeline checks `prefers-reduced-motion` and jumps to the end state rather
-than animating toward it. Content still arrives — it just does not move.
+Every timeline checks `prefers-reduced-motion` and jumps straight to the end
+state rather than animating towards it. The content still arrives, it just does
+not move on the way in.
 
 ## What is next
 
-Content now lives in YAML read by [copy-ink](https://github.com/Richard-Sen27/copy-ink),
-so page copy is editable in place rather than in a component. Posts stay in MDX,
-because a technical blog wants code blocks and components more than it wants a
-browser-based editor.
+The content now lives in YAML and is read by
+[copy-ink](https://github.com/Richard-Sen27/copy-ink), a library I wrote, so
+page copy is editable in the browser instead of buried in a component. Posts
+stay in MDX, because a technical blog wants code blocks and components more
+than it wants a browser based editor.

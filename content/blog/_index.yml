@@ -6,7 +6,7 @@ hero:
   eyebrow: "Writing"
   headline: "Blog"
   intro: >-
-    Notes on engineering decisions, things that broke, and what I would do
+    Notes about engineering decisions, things that broke, and what I would do
     differently. Occasional rather than regular.
 
 emptyState: "Nothing published yet. The first post is being written."

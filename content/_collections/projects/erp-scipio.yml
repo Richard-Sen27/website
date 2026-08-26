@@ -20,19 +20,20 @@ tags:
 
 problem: |
   Military logistics runs on inventory that has to be correct, auditable and
-  traceable across units. Without a system that owns the record, stock levels
-  become a matter of trust rather than fact — and the audit trail only exists
-  as far back as someone happened to write things down.
+  traceable across units. With no system that owns the record, stock levels come
+  down to trust rather than fact, and the audit trail only goes back as far as
+  someone happened to write things down.
 
 approach: |
-  We modelled the domain first and let the interface follow it. Java services
-  own the transactional core, PostgreSQL holds the ledger, and a Next.js
-  frontend renders role-scoped views on top. Everything is containerised.
+  We modelled the domain first and let the interface follow from it. Java
+  services own the transactional core, PostgreSQL holds the ledger, and a
+  Next.js frontend renders role scoped views on top. Everything is
+  containerised.
 
-  Built over the diploma year by a team of five, in cooperation with Scipio
-  Networks GmbH, who brought the domain requirements.
+  Built over the diploma year by a team of five, working with Scipio Networks
+  GmbH, who brought the domain requirements.
 
 outcome: |
-  Delivered as our diploma project at HTL Spengergasse. My accompanying thesis,
-  "Comparison of Next.js to other leading frontend frameworks", came out of the
-  framework decision we made at the start of this build.
+  Delivered as our diploma project at HTL Spengergasse. My thesis, "Comparison
+  of Next.js to other leading frontend frameworks", came out of the framework
+  decision we made at the start of this build.
