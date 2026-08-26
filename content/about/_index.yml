@@ -97,10 +97,6 @@ education:
         "Comparison of Next.js to other leading frontend frameworks", came out
         of the framework decision we made for our diploma project, the ERP
         Scipio logistics platform.
-    - period: "Sep 2017 - Jun 2021"
-      title: "Unterstufe"
-      org: "Gymnasium Neusiedl am See"
-      body: "Robotics class in the final two years."
 
 awards:
   heading: "Awards & competitions"
@@ -155,14 +151,3 @@ stack:
   heading: "Tools"
   body: "Grouped by where they sit in the stack."
 
-languages:
-  heading: "Languages"
-  items:
-    - name: "German"
-      level: "Native"
-    - name: "English"
-      level: "C1"
-    - name: "Slovak"
-      level: "B1"
-    - name: "Russian"
-      level: "A1"
