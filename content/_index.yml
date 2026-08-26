@@ -1,0 +1,45 @@
+meta:
+  title: "Richard Senger — Software Engineer"
+  description: "Software engineer in Austria building web platforms and machine learning systems. Selected work, writing and contact."
+
+hero:
+  eyebrow: "Software Engineer · Austria"
+  headline: "I build software that holds up under real use."
+  subheadline: >-
+    Full-stack web engineering and applied machine learning. Most of my work
+    lives where a clean interface meets a system that has to stay correct —
+    ERP platforms, routing engines, compliance tooling.
+  primaryCta:
+    label: "See my work"
+    href: "/projects"
+  secondaryCta:
+    label: "Get in touch"
+    href: "/contact"
+
+work:
+  eyebrow: "Selected work"
+  heading: "Things I have shipped"
+  body: "A few projects that show the range — team-built platforms, competition entries, and client sites."
+  cta:
+    label: "All projects"
+    href: "/projects"
+
+stack:
+  eyebrow: "Stack"
+  heading: "What I build with"
+  body: "The tools I reach for most. I care more about picking the right one than collecting them."
+
+writing:
+  eyebrow: "Writing"
+  heading: "Notes from the work"
+  body: "Occasional posts on engineering decisions, things that broke, and what I would do differently."
+  cta:
+    label: "All posts"
+    href: "/blog"
+
+contactCta:
+  heading: "Have something you want built?"
+  body: "I am open to interesting problems, contract work and collaboration."
+  cta:
+    label: "Start a conversation"
+    href: "/contact"

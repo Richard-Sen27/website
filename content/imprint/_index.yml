@@ -1,0 +1,62 @@
+# Offenlegung nach § 5 ECG, § 14 UGB und § 25 MedienG.
+#
+# TODO — the placeholders below must be filled with real data before this goes
+# live. An incomplete Impressum is an administrative offence in Austria.
+# Everything here is locked so it stays readable but is never editable inline.
+
+meta:
+  title: "Imprint"
+  description: "Legal disclosure (Offenlegung) under § 5 ECG and § 25 MedienG for dev.richard-senger.com."
+
+_locked:
+  - operator
+  - contact
+  - businessDetails
+  - disclaimer
+  - dispute
+
+hero:
+  eyebrow: "Legal"
+  headline: "Imprint"
+  intro: "Information required under § 5 ECG, § 14 UGB and § 25 MedienG."
+
+operator:
+  heading: "Media owner and publisher"
+  name: "TODO — full legal name"
+  street: "TODO — street and number"
+  postcode: "TODO — postcode"
+  city: "TODO — city"
+  country: "Austria"
+
+contact:
+  heading: "Contact"
+  email: "contact@richard-senger.com"
+  phone: "TODO — phone number, or delete this line if not applicable"
+
+businessDetails:
+  heading: "Business details"
+  # Delete any line that does not apply. A purely private site needs none of
+  # these, but must still name the operator and address above.
+  purpose: "TODO — e.g. private portfolio, or the registered business purpose"
+  vatId: "TODO — UID-Nummer, or delete if not VAT registered"
+  registration: "TODO — Gewerbeanmeldung / GISA number, or delete if private"
+  authority: "TODO — Bezirkshauptmannschaft / Magistrat, or delete if private"
+  chamber: "TODO — WKO membership, or delete if not applicable"
+
+disclaimer:
+  heading: "Liability for links"
+  body: >-
+    This site contains links to external websites over whose content I have no
+    control. No liability is accepted for that content; responsibility rests
+    with the operator of the linked site. Linked pages were checked for
+    unlawful content at the time of linking, and none was apparent. Ongoing
+    monitoring without concrete evidence of an infringement is not reasonable,
+    and any such link will be removed promptly once notified.
+
+dispute:
+  heading: "Online dispute resolution"
+  body: >-
+    The European Commission provides a platform for online dispute resolution
+    at ec.europa.eu/consumers/odr. I am neither obliged nor willing to take
+    part in dispute resolution proceedings before a consumer arbitration board.
+  href: "https://ec.europa.eu/consumers/odr"
