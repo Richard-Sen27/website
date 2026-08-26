@@ -3,6 +3,7 @@ summary: >-
   Migrated the Burgenland folk dance association off legacy WordPress onto a
   self-hosted Next.js site with Strapi CMS, so the committee can publish without
   a developer in the loop.
+category: "Web platforms"
 year: "2025"
 role: "Webmaster and solo developer"
 context: "Volkstanzverband Burgenland"
