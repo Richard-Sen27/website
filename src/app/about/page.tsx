@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { getCopy } from "copy-ink/server";
 
+import AwardList from "@/components/AwardList";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/motion/Reveal";
 import StackGrid from "@/components/StackGrid";
@@ -10,6 +11,7 @@ import {
   getGlobal,
   image,
   objectList,
+  type Award,
   type SocialLink,
   type StackEntry,
 } from "@/lib/content";
@@ -30,6 +32,11 @@ interface TimelineEntry {
   body: string;
 }
 
+interface Language {
+  name: string;
+  level: string;
+}
+
 export function generateMetadata(): Promise<Metadata> {
   return metadataForScope(SCOPE, "/about");
 }
@@ -42,7 +49,10 @@ export default async function AboutPage() {
 
   const portrait = image(copy, "portrait");
   const pillars = objectList<Pillar>(copy, "pillars.items");
-  const timeline = objectList<TimelineEntry>(copy, "timeline.items");
+  const experience = objectList<TimelineEntry>(copy, "experience.items");
+  const education = objectList<TimelineEntry>(copy, "education.items");
+  const awards = objectList<Award>(copy, "awards.items");
+  const languages = objectList<Language>(copy, "languages.items");
   const stack = objectList<StackEntry>(global, "stack");
   const socials = objectList<SocialLink>(global, "socials");
 
@@ -76,7 +86,7 @@ export default async function AboutPage() {
           </Reveal>
 
           {portrait ? (
-            <Reveal delay={0.15} className="order-first md:order-none">
+            <Reveal delay={0.15} className="order-first md:order-0">
               <Image
                 src={portrait.src}
                 alt={portrait.alt ?? ""}
@@ -92,13 +102,8 @@ export default async function AboutPage() {
 
       <Section>
         <SectionHeader heading={copy.get("bio.heading")} />
-        <Reveal className="container-prose prose-ink mx-0 px-0">
-          {copy
-            .get("bio.body")
-            .split("\n\n")
-            .map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+        <Reveal className="prose-ink max-w-2xl">
+          <Paragraphs text={copy.get("bio.body")} />
         </Reveal>
       </Section>
 
@@ -119,26 +124,27 @@ export default async function AboutPage() {
         </Reveal>
       </Section>
 
-      {timeline.length ? (
+      {experience.length ? (
         <Section>
-          <SectionHeader heading={copy.get("timeline.heading")} />
-          <Reveal stagger className="flex flex-col">
-            {timeline.map((entry, index) => (
-              <div
-                key={`${entry.period}-${index}`}
-                className="grid gap-2 border-b border-line py-8 first:pt-0 last:border-0 md:grid-cols-[10rem_1fr] md:gap-8"
-              >
-                <p className="font-mono text-xs text-ink-faint">{entry.period}</p>
-                <div className="flex flex-col gap-1.5">
-                  <h3 className="text-base font-medium text-ink">{entry.title}</h3>
-                  <p className="text-sm text-ink-muted">{entry.org}</p>
-                  <p className="mt-1 max-w-2xl text-sm leading-relaxed text-ink-muted">
-                    {entry.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </Reveal>
+          <SectionHeader heading={copy.get("experience.heading")} />
+          <Timeline entries={experience} />
+        </Section>
+      ) : null}
+
+      {awards.length ? (
+        <Section>
+          <SectionHeader
+            heading={copy.get("awards.heading")}
+            body={copy.get("awards.body")}
+          />
+          <AwardList awards={awards} />
+        </Section>
+      ) : null}
+
+      {education.length ? (
+        <Section>
+          <SectionHeader heading={copy.get("education.heading")} />
+          <Timeline entries={education} />
         </Section>
       ) : null}
 
@@ -149,6 +155,62 @@ export default async function AboutPage() {
         />
         <StackGrid stack={stack} />
       </Section>
+
+      {languages.length ? (
+        <Section>
+          <SectionHeader heading={copy.get("languages.heading")} />
+          <Reveal stagger className="flex flex-wrap gap-2">
+            {languages.map((language) => (
+              <span
+                key={language.name}
+                className="inline-flex items-baseline gap-2 rounded-lg border border-line bg-surface-raised px-3 py-2 text-sm text-ink"
+              >
+                {language.name}
+                <span className="font-mono text-xs text-ink-faint">
+                  {language.level}
+                </span>
+              </span>
+            ))}
+          </Reveal>
+        </Section>
+      ) : null}
+    </>
+  );
+}
+
+function Timeline({ entries }: { entries: TimelineEntry[] }) {
+  return (
+    <Reveal stagger className="flex flex-col">
+      {entries.map((entry, index) => (
+        <div
+          key={`${entry.period}-${index}`}
+          className="grid gap-2 border-b border-line py-8 first:pt-0 last:border-0 md:grid-cols-[12rem_1fr] md:gap-8"
+        >
+          <p className="font-mono text-xs text-ink-faint">{entry.period}</p>
+          <div className="flex flex-col gap-1.5">
+            <h3 className="text-base font-medium text-ink">{entry.title}</h3>
+            <p className="text-sm text-ink-muted">{entry.org}</p>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-ink-muted">
+              {entry.body}
+            </p>
+          </div>
+        </div>
+      ))}
+    </Reveal>
+  );
+}
+
+/** YAML folded scalars separate paragraphs with a blank line. */
+function Paragraphs({ text }: { text: string }) {
+  return (
+    <>
+      {text
+        .split(/\n{2,}/)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean)
+        .map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
     </>
   );
 }
