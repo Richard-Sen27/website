@@ -1,4 +1,4 @@
-# Site-wide content. Scope "_global" — not tied to a route.
+# Site-wide content. Scope "_global", which is not tied to a route.
 
 siteName: "Richard Senger"
 role: "Software Engineer"
@@ -58,9 +58,9 @@ footer:
         - label: "Privacy"
           href: "/privacy"
 
-# No repeatable field type in copy-ink yet, so this is a plain YAML sequence:
-# readable via raw(), not inline-editable. `icon` is optional — entries without
-# a matching file in public/tech render as a plain chip.
+# copy-ink has no repeatable field type yet, so this is a plain YAML sequence.
+# It is readable via raw() but not inline-editable. `icon` is optional: entries
+# with no matching file in public/tech render as a plain chip.
 stack:
   - name: "TypeScript"
     icon: "typescript"

@@ -1,8 +1,8 @@
 # Offenlegung nach § 5 ECG, § 14 UGB und § 25 MedienG.
 #
-# TODO — the placeholders below must be filled with real data before this goes
-# live. An incomplete Impressum is an administrative offence in Austria.
-# Everything here is locked so it stays readable but is never editable inline.
+# TODO: the placeholders below need real data before this goes live. An
+# incomplete Impressum is an administrative offence in Austria. Everything here
+# is locked, so it stays readable but can never be edited inline.
 
 meta:
   title: "Imprint"
@@ -23,22 +23,22 @@ hero:
 operator:
   heading: "Media owner and publisher"
   name: "Richard Senger"
-  street: "TODO — street and number"
-  postcode: "TODO — postcode"
+  street: "TODO: street and number"
+  postcode: "TODO: postcode"
   city: "Vienna"
   country: "Austria"
 
 contact:
   heading: "Contact"
   email: "contact@richard-senger.com"
-  # Delete this line if you would rather not publish a personal mobile — email
-  # alone satisfies the "rapid electronic contact" requirement in § 5 ECG.
+  # Delete this line if you would rather not publish a personal mobile. Email
+  # on its own satisfies the "rapid electronic contact" requirement in § 5 ECG.
   phone: "+43 680 2458042"
 
 businessDetails:
   heading: "Purpose of this site"
   # A private site needs no UID, Gewerbeanmeldung, supervisory authority or WKO
-  # entry — only the operator, address and contact above. Add those rows back
+  # entry, only the operator, address and contact above. Add those rows back
   # (and to src/app/imprint/page.tsx) if this ever becomes a registered trade.
   purpose: >-
     Private portfolio and personal website. No commercial activity, no goods or
@@ -47,12 +47,12 @@ businessDetails:
 disclaimer:
   heading: "Liability for links"
   body: >-
-    This site contains links to external websites over whose content I have no
-    control. No liability is accepted for that content; responsibility rests
-    with the operator of the linked site. Linked pages were checked for
-    unlawful content at the time of linking, and none was apparent. Ongoing
-    monitoring without concrete evidence of an infringement is not reasonable,
-    and any such link will be removed promptly once notified.
+    This site contains links to external websites whose content I have no
+    control over. I accept no liability for that content, which remains the
+    responsibility of the operator of the linked site. Linked pages were checked
+    for unlawful content at the time of linking and none was apparent. Monitoring
+    them continuously without concrete evidence of an infringement is not
+    reasonable, but any such link will be removed promptly once I am notified.
 
 dispute:
   heading: "Online dispute resolution"
