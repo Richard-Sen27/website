@@ -22,7 +22,7 @@ export default function Header({ links, siteName }: HeaderProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const listRef = useRef<HTMLUListElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const [indicator, setIndicator] = useState<{ left: number; width: number } | null>(
     null,
   );
@@ -48,21 +48,36 @@ export default function Header({ links, siteName }: HeaderProps) {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   useEffect(() => {
-    const list = listRef.current;
-    if (!list) return;
+    const nav = navRef.current;
+    if (!nav) return;
 
     const measure = () => {
-      const active = list.querySelector<HTMLElement>("[data-active='true']");
+      const active = nav.querySelector<HTMLElement>("[data-active='true']");
       if (!active) {
         setIndicator(null);
         return;
       }
-      setIndicator({ left: active.offsetLeft, width: active.offsetWidth });
+      // Measured against the nav, which is also the pill's containing block,
+      // so the number that comes out is the number `left` needs.
+      //
+      // This used to read active.offsetLeft. offsetLeft resolves against the
+      // nearest positioned ancestor, which was each link's own `relative` <li>,
+      // so it was always ~0 and the pill only ever changed width.
+      const navBox = nav.getBoundingClientRect();
+      const activeBox = active.getBoundingClientRect();
+      setIndicator({
+        left: activeBox.left - navBox.left,
+        width: activeBox.width,
+      });
     };
 
     measure();
+
+    // Geist loads async and the swap changes every label's width.
+    document.fonts.ready.then(measure).catch(() => {});
+
     const observer = new ResizeObserver(measure);
-    observer.observe(list);
+    observer.observe(nav);
     return () => observer.disconnect();
   }, [pathname, links]);
 
@@ -92,24 +107,26 @@ export default function Header({ links, siteName }: HeaderProps) {
             <span className="sr-only">{siteName}, home</span>
           </Link>
 
-          {/* Desktop navigation */}
-          <nav aria-label="Main" className="hidden md:block">
-            <ul ref={listRef} className="relative flex items-center gap-1">
-              {indicator ? (
-                <li
-                  aria-hidden
-                  className="absolute inset-y-1 rounded-md bg-surface-active transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  style={{ left: indicator.left, width: indicator.width }}
-                />
-              ) : null}
+          {/* Desktop navigation. The pill sits outside the <ul> so the list
+              holds nothing but list items, and so it is not itself a flex
+              child of the row it is measuring against. */}
+          <nav ref={navRef} aria-label="Main" className="relative hidden md:block">
+            {indicator ? (
+              <span
+                aria-hidden
+                className="absolute inset-y-1 rounded-md bg-surface-active transition-[left,width] duration-300 ease-out-expo"
+                style={{ left: indicator.left, width: indicator.width }}
+              />
+            ) : null}
+            <ul className="flex items-center gap-1">
               {links.map((link) => (
-                <li key={link.href} className="relative">
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     data-active={isActive(link.href)}
                     aria-current={isActive(link.href) ? "page" : undefined}
                     className={cx(
-                      "block rounded-md px-3 py-1.5 text-sm transition-colors duration-200",
+                      "relative block rounded-md px-3 py-1.5 text-sm transition-colors duration-200",
                       isActive(link.href)
                         ? "text-ink"
                         : "text-ink-muted hover:text-ink",
