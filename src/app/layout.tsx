@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { CopyInkScripts } from "copy-ink/server";
 
-import "@/../copy-ink.setup";
+import "~/copy-ink.setup";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
