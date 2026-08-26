@@ -29,9 +29,17 @@
 
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
     scroll-padding-top: 6rem;
+    /* overflow-x lives here rather than on body. Setting it on body makes body
+     * its own scroll container, which is what stops window scroll restoration
+     * from landing where it should on navigation. `clip` rather than `hidden`
+     * because `hidden` creates a scroll container wherever it is applied. */
+    overflow-x: clip;
   }
+
+  /* No `scroll-behavior: smooth` on html on purpose. It applies to the App
+   * Router's own scroll on navigation, so every route change becomes an
+   * animation that anything else touching scroll can interrupt part way. */
 
   body {
     background: var(--surface);
@@ -42,7 +50,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100svh;
-    overflow-x: hidden;
   }
 
   h1,
@@ -369,10 +376,6 @@
  * CSS guard makes sure nothing is left stuck at opacity 0 if JS is slow.
  * ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

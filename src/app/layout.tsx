@@ -7,6 +7,7 @@ import "./globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollManager from "@/components/ScrollManager";
 import { geistMono, geistSans } from "@/lib/fonts";
 import { getGlobal, objectList, type NavLink } from "@/lib/content";
 import { site } from "@/lib/site";
@@ -62,6 +63,8 @@ export default async function RootLayout({
         >
           Skip to content
         </a>
+
+        <ScrollManager />
 
         <Header links={navLinks} siteName={global.get("siteName")} />
 
