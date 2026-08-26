@@ -33,16 +33,16 @@ export function ogImage({
           position: "relative",
         }}
       >
-        {/* Accent wash, echoing the hero glow. */}
+        {/* Accent wash, echoing the hero glow. Satori has no filter: blur(),
+            so the falloff has to come from the gradient itself. */}
         <div
           style={{
             position: "absolute",
-            top: -280,
-            left: 240,
-            width: 720,
-            height: 720,
-            borderRadius: 9999,
-            background: tokens.glow,
+            top: -420,
+            left: 60,
+            width: 1080,
+            height: 1080,
+            background: `radial-gradient(circle, ${tokens.glow} 0%, ${tokens.surface} 62%)`,
             display: "flex",
           }}
         />
