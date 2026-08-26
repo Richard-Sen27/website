@@ -89,7 +89,7 @@ export default function Header({ links, siteName }: HeaderProps) {
             <span aria-hidden className="text-ink-faint">
               /&gt;
             </span>
-            <span className="sr-only">{siteName} — home</span>
+            <span className="sr-only">{siteName}, home</span>
           </Link>
 
           {/* Desktop navigation */}

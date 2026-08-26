@@ -3,8 +3,8 @@ import { cx } from "@/components/ui";
 import type { Award } from "@/lib/content";
 
 /**
- * Competition record. First places get the accent treatment — with four of
- * them, ranking every row equally would flatten the thing worth noticing.
+ * Competition record. First places get the accent treatment, because with four
+ * of them, ranking every row equally would flatten the thing worth noticing.
  */
 export default function AwardList({ awards }: { awards: Award[] }) {
   return (

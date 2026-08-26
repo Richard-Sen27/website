@@ -6,9 +6,9 @@ import type { StackEntry } from "@/lib/content";
 /**
  * Stack, grouped by where each tool sits.
  *
- * `icon` is optional — not everything in the stack has a mark in public/tech,
- * and a missing file is not a reason to drop the entry. Icons are decorative;
- * the name beside them carries the meaning, so they stay out of the
+ * `icon` is optional, because not everything in the stack has a mark in
+ * public/tech and a missing file is no reason to drop the entry. Icons are
+ * decorative. The name beside them carries the meaning, so they stay out of the
  * accessibility tree.
  */
 export default function StackGrid({ stack }: { stack: StackEntry[] }) {

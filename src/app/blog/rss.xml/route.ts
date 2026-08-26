@@ -36,7 +36,7 @@ export async function GET() {
 
   const published = posts.filter((post) => !post.draft);
   const feedUrl = absoluteUrl("/blog/rss.xml");
-  const title = `${global.get("siteName")} — Blog`;
+  const title = `${global.get("siteName")} Blog`;
   const description = copy.get("hero.intro");
 
   const items = published

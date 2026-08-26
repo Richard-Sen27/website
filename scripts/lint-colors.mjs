@@ -3,8 +3,8 @@
  * Fails if a colour is authored anywhere except src/app/theme.css.
  *
  * Catches two classes of leak:
- *   1. Literal values      — #0a0a0a, rgb(...), hsl(...), oklch(...)
- *   2. Tailwind's palette  — text-zinc-500, bg-blue-600/50, border-slate-800
+ *   1. Literal values:     #0a0a0a, rgb(...), hsl(...), oklch(...)
+ *   2. Tailwind's palette: text-zinc-500, bg-blue-600/50, border-slate-800
  *
  * Both bypass the token system, so both are build failures.
  */
@@ -82,9 +82,9 @@ for (const dir of ROOTS) {
 
     const lines = readFileSync(file, "utf8").split("\n");
     lines.forEach((line, index) => {
-      // Fenced blocks in Markdown are code samples, not applied styling — a post
-      // about the token system quotes colour values on purpose. Inline JSX in
-      // MDX sits outside fences and is still checked.
+      // Fenced blocks in Markdown are code samples rather than applied styling.
+      // A post about the token system quotes colour values on purpose. Inline JSX
+      // in MDX sits outside fences and is still checked.
       if (isMarkdown && /^\s*(```|~~~)/.test(line)) {
         inFence = !inFence;
         return;
@@ -114,15 +114,15 @@ for (const dir of ROOTS) {
 }
 
 if (violations.length === 0) {
-  console.log("lint:colors — no hardcoded colours outside theme.css");
+  console.log("lint:colors: no hardcoded colours outside theme.css");
   process.exit(0);
 }
 
 console.error(
-  `\nlint:colors — ${violations.length} hardcoded colour${violations.length === 1 ? "" : "s"} outside src/app/theme.css\n`,
+  `\nlint:colors: ${violations.length} hardcoded colour${violations.length === 1 ? "" : "s"} outside src/app/theme.css\n`,
 );
 for (const v of violations) {
   console.error(`  ${v.file}:${v.line}  ${v.match}`);
-  console.error(`    ${v.rule} — ${v.hint}\n`);
+  console.error(`    ${v.rule}: ${v.hint}\n`);
 }
 process.exit(1);

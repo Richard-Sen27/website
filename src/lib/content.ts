@@ -7,8 +7,8 @@ import type { CollectionItem, ContentData, ImageNode } from "copy-ink";
  * Helpers on top of copy-ink's server API.
  *
  * `CollectionItem` exposes `data` but no accessors, and copy-ink has no
- * repeatable field type yet — so lists (tags, nav links, timeline entries) live
- * as plain YAML sequences read through `raw()`. These wrap both patterns so
+ * repeatable field type yet, so lists like tags, nav links and timeline entries
+ * live as plain YAML sequences read through `raw()`. These wrap both patterns so
  * pages never index into `data` by hand.
  */
 
@@ -36,7 +36,7 @@ export function field(item: CollectionItem, path: string): string {
   return String(value);
 }
 
-/** Raw node on a collection item — typed nodes, sequences, nested mappings. */
+/** Raw node on a collection item: typed nodes, sequences, nested mappings. */
 export function raw(item: CollectionItem, path: string): unknown {
   return atPath(item.data, path);
 }
@@ -110,7 +110,7 @@ export interface StackEntry {
 
 export interface Award {
   date: string;
-  /** "1st", "2nd", "Award" — rendered as a rank chip. */
+  /** "1st", "2nd", "Award". Rendered as a rank chip. */
   place: string;
   title: string;
   org: string;
