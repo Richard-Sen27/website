@@ -91,7 +91,9 @@
   /* GSAP sets the final state; this is the pre-hydration resting state so
    * nothing flashes in at full opacity before the timeline takes over.
    * Guarded by .js so no-JS and reduced-motion users still see content. */
-  .js [data-reveal] {
+  .js [data-reveal],
+  .js [data-reveal-stagger] > *,
+  .js [data-word] {
     opacity: 0;
   }
 }
@@ -380,7 +382,9 @@
     scroll-behavior: auto !important;
   }
 
-  .js [data-reveal] {
+  .js [data-reveal],
+  .js [data-reveal-stagger] > *,
+  .js [data-word] {
     opacity: 1;
   }
 }

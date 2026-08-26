@@ -1,12 +1,7 @@
 import "server-only";
 
 import { getCopy, type CopyReader } from "copy-ink/server";
-import {
-  isImageNode,
-  type CollectionItem,
-  type ContentData,
-  type ImageNode,
-} from "copy-ink";
+import type { CollectionItem, ContentData, ImageNode } from "copy-ink";
 
 /**
  * Helpers on top of copy-ink's server API.
@@ -70,6 +65,18 @@ export function stringList(source: RawSource, path: string): string[] {
 export function objectList<T>(source: RawSource, path: string): T[] {
   const value = rawFrom(source, path);
   return Array.isArray(value) ? (value as T[]) : [];
+}
+
+/**
+ * Narrows to an image node. copy-ink exports the `ImageNode` type from its root
+ * but not its `isImageNode` guard, so the structural check is repeated here.
+ */
+function isImageNode(value: unknown): value is ImageNode {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    (value as { _type?: unknown })._type === "image"
+  );
 }
 
 /** An `_type: image` node, or null when absent or malformed. */
