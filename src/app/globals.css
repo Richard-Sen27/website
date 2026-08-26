@@ -2,7 +2,7 @@
 @import "./theme.css";
 
 /* ============================================================================
- * globals.css — structure, typography and primitives.
+ * globals.css: structure, typography and primitives.
  * No literal colour values here: everything resolves through theme.css.
  * ========================================================================= */
 
@@ -152,7 +152,7 @@
     z-index: -1;
   }
 
-  /* Hairline that brightens toward the cursor — the Vercel card edge. */
+  /* Hairline that brightens towards the cursor, the Vercel card edge. */
   .edge-glow::after {
     content: "";
     position: absolute;

@@ -19,9 +19,9 @@ interface RevealProps {
 /**
  * Scroll-triggered entrance.
  *
- * The data attributes set the pre-animation opacity in CSS so nothing flashes
- * in at full opacity before GSAP takes over. Both rules are scoped to `.js`, so
- * without JavaScript — and under prefers-reduced-motion — content stays visible.
+ * The data attributes set the pre-animation opacity in CSS so nothing flashes in
+ * at full opacity before GSAP takes over. Both rules are scoped to `.js`, so
+ * content stays visible without JavaScript and under prefers-reduced-motion.
  */
 export default function Reveal({
   children,

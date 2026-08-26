@@ -15,8 +15,8 @@ import { tokens } from "@/design/tokens.generated";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Software Engineer`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | Software Engineer`,
+    template: `%s | ${site.name}`,
   },
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
@@ -71,7 +71,7 @@ export default async function RootLayout({
 
         <Footer />
 
-        {/* Renders nothing at all for a visitor — the editor bundle only loads
+        {/* Renders nothing at all for a visitor. The editor bundle only loads
             once a copy-ink session exists. */}
         <CopyInkScripts />
 

@@ -156,7 +156,7 @@ for (const name of declarations.keys()) {
 
 const entries = Object.entries(tokens).sort(([a], [b]) => a.localeCompare(b));
 
-const body = `// AUTO-GENERATED — DO NOT EDIT.
+const body = `// AUTO-GENERATED. DO NOT EDIT.
 // Source: src/app/theme.css · Regenerate: npm run tokens
 //
 // Semantic colour tokens flattened to opaque sRGB hex, for the surfaces that

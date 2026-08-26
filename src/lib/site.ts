@@ -1,5 +1,5 @@
 /**
- * Values needed before content can be read — the metadataBase, the OG image
+ * Values needed before content can be read: the metadataBase, the OG image
  * dimensions, the analytics id. Everything editorial lives in
  * `content/_global.yml` instead.
  */

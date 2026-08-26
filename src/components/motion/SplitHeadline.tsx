@@ -15,10 +15,10 @@ interface SplitHeadlineProps {
 /**
  * Word-by-word headline entrance.
  *
- * Splits in the markup rather than with SplitText so the full sentence is in
- * the server-rendered HTML — a headline assembled by client JS is a headline
- * a crawler may not see. Each word gets an overflow-clipped wrapper so the
- * rise reads as a reveal rather than a slide.
+ * Splits in the markup rather than with SplitText so the full sentence is in the
+ * server-rendered HTML. A headline assembled by client JS is a headline a crawler
+ * may not see. Each word gets an overflow-clipped wrapper so the rise reads as a
+ * reveal rather than a slide.
  */
 export default function SplitHeadline({
   text,
