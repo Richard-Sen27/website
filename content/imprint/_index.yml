@@ -22,26 +22,27 @@ hero:
 
 operator:
   heading: "Media owner and publisher"
-  name: "TODO — full legal name"
+  name: "Richard Senger"
   street: "TODO — street and number"
   postcode: "TODO — postcode"
-  city: "TODO — city"
+  city: "Vienna"
   country: "Austria"
 
 contact:
   heading: "Contact"
   email: "contact@richard-senger.com"
-  phone: "TODO — phone number, or delete this line if not applicable"
+  # Delete this line if you would rather not publish a personal mobile — email
+  # alone satisfies the "rapid electronic contact" requirement in § 5 ECG.
+  phone: "+43 680 2458042"
 
 businessDetails:
-  heading: "Business details"
-  # Delete any line that does not apply. A purely private site needs none of
-  # these, but must still name the operator and address above.
-  purpose: "TODO — e.g. private portfolio, or the registered business purpose"
-  vatId: "TODO — UID-Nummer, or delete if not VAT registered"
-  registration: "TODO — Gewerbeanmeldung / GISA number, or delete if private"
-  authority: "TODO — Bezirkshauptmannschaft / Magistrat, or delete if private"
-  chamber: "TODO — WKO membership, or delete if not applicable"
+  heading: "Purpose of this site"
+  # A private site needs no UID, Gewerbeanmeldung, supervisory authority or WKO
+  # entry — only the operator, address and contact above. Add those rows back
+  # (and to src/app/imprint/page.tsx) if this ever becomes a registered trade.
+  purpose: >-
+    Private portfolio and personal website. No commercial activity, no goods or
+    services offered for sale.
 
 disclaimer:
   heading: "Liability for links"

@@ -23,15 +23,15 @@ hero:
   intro: >-
     What personal data this site collects, why, on what legal basis, and what
     you can do about it. Written to the disclosure duties in Article 13 GDPR.
-  updated: "TODO — date of last revision"
+  updated: "26 August 2026"
 
 controller:
   heading: "Controller"
   body: >-
     The controller responsible for processing on this site under Article 4(7)
     GDPR is:
-  name: "TODO — full legal name"
-  address: "TODO — street, postcode, city, Austria"
+  name: "Richard Senger"
+  address: "TODO — street, postcode, Vienna, Austria"
   email: "contact@richard-senger.com"
 
 hosting:
@@ -42,7 +42,7 @@ hosting:
     requested path, timestamp, referrer and user agent. This is technically
     necessary to deliver the site and to detect abuse, on the basis of a
     legitimate interest under Article 6(1)(f) GDPR. Logs are rotated and
-    deleted after TODO — retention period.
+    deleted after 14 days.
 
 contactForm:
   heading: "Contact form"
