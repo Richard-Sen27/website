@@ -1,10 +1,11 @@
-title: "ERP Scipio"
+title: "Military Logistics ERP"
 summary: >-
-  Military ERP system built with a German startup as our diploma project.
-  Next.js frontend, Spring Boot services, PostgreSQL. Team of five.
-year: "2025"
+  ERP system for military logistics, built for the German startup Scipio
+  Networks GmbH as our diploma project. Next.js frontend, Java services,
+  PostgreSQL. Team of five.
+year: "2026"
 role: "Full-stack engineer"
-context: "Diploma project, in cooperation with a German startup"
+context: "Diploma project · Scipio Networks GmbH"
 featured: true
 
 tags:
@@ -12,25 +13,26 @@ tags:
   - "Java"
   - "Spring Boot"
   - "PostgreSQL"
+  - "Python"
+  - "Docker"
   - "ERP"
   - "Team project"
 
 problem: |
   Military logistics runs on inventory that has to be correct, auditable and
-  traceable across units. The existing process leaned on spreadsheets and
-  informal handover, which made stock levels a matter of trust rather than
-  record.
-
-  TODO — expand: what specifically was broken, and who felt it.
+  traceable across units. Without a system that owns the record, stock levels
+  become a matter of trust rather than fact — and the audit trail only exists
+  as far back as someone happened to write things down.
 
 approach: |
-  We built a domain model first and let the interface follow it. Spring Boot
-  services own the transactional core, PostgreSQL holds the ledger, and a
-  Next.js frontend renders role-scoped views on top.
+  We modelled the domain first and let the interface follow it. Java services
+  own the transactional core, PostgreSQL holds the ledger, and a Next.js
+  frontend renders role-scoped views on top. Everything is containerised.
 
-  TODO — expand: which part you owned, the architectural calls you made, and
-  anything you would do differently.
+  Built over the diploma year by a team of five, in cooperation with Scipio
+  Networks GmbH, who brought the domain requirements.
 
 outcome: |
-  TODO — expand: what shipped, the grade or assessment, whether the startup
-  took it further, and what you learned running a five-person team project.
+  Delivered as our diploma project at HTL Spengergasse. My accompanying thesis,
+  "Comparison of Next.js to other leading frontend frameworks", came out of the
+  framework decision we made at the start of this build.
