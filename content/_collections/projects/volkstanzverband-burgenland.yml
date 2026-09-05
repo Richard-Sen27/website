@@ -1,35 +1,31 @@
 title: "Volkstanzverband Burgenland"
 summary: >-
-  Migrated the Burgenland folk dance association off legacy WordPress onto a
-  self-hosted Next.js site with Strapi CMS, so the committee can publish without
-  a developer in the loop.
-year: "2025"
-role: "Webmaster — solo developer"
-context: "Volkstanzverband Burgenland"
+  Public website for the Burgenland folk dance association. Migrated off
+  WordPress onto a self-hosted Next.js and Strapi stack.
+year: "2024"
+role: "Solo developer"
+context: "Client project"
 liveUrl: "https://web.infra.volkstanzverband-burgenland.at"
 
 tags:
   - "Next.js"
   - "Strapi"
   - "CMS"
-  - "Docker"
   - "Migration"
   - "Client work"
 
 problem: |
-  The association's WordPress site had become slow and awkward to maintain, and
-  the people who actually needed to publish events depended on someone else to
-  do it for them.
+  The association's WordPress site had become slow and awkward to maintain,
+  and the people who actually needed to publish events were dependent on
+  someone else to do it.
+
+  TODO — expand: what the migration had to preserve.
 
 approach: |
-  A Next.js frontend against a self-hosted Strapi instance, with the content
-  modelled around what the committee actually publishes — events, groups,
-  announcements — rather than around WordPress pages.
+  A Next.js frontend against a self-hosted Strapi instance, so editors get a
+  structured CMS and the public site stays static and fast.
 
-  Hosted on Hetzner infrastructure, containerised with Docker and managed
-  through Dokploy, which keeps the running cost low and the deployment
-  reproducible.
+  TODO — expand: content modelling, how you handled the migration, hosting.
 
 outcome: |
-  The committee publishes directly. I was elected webmaster of the association
-  and continue to maintain it.
+  TODO — expand: performance before and after, and how the editors took to it.

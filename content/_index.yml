@@ -1,14 +1,14 @@
 meta:
   title: "Richard Senger — Software Engineer"
-  description: "Software engineer in Vienna building full-stack products and applied AI systems. Four-time hackathon winner, currently at Lodo Technologies in London."
+  description: "Software engineer in Austria building web platforms and machine learning systems. Selected work, writing and contact."
 
 hero:
-  eyebrow: "Software Engineer · Vienna"
-  headline: "I build software that replaces the manual process."
+  eyebrow: "Software Engineer · Austria"
+  headline: "I build software that holds up under real use."
   subheadline: >-
-    Full-stack product engineering and applied AI. ERP platforms, OCR pipelines,
-    route optimisation, compliance tooling — mostly systems that have to stay
-    correct while somebody depends on them.
+    Full-stack web engineering and applied machine learning. Most of my work
+    lives where a clean interface meets a system that has to stay correct —
+    ERP platforms, routing engines, compliance tooling.
   primaryCta:
     label: "See my work"
     href: "/projects"
@@ -19,31 +19,10 @@ hero:
 work:
   eyebrow: "Selected work"
   heading: "Things I have shipped"
-  body: >-
-    A diploma ERP platform, a national AI championship winner, and client work
-    that is still in production.
+  body: "A few projects that show the range — team-built platforms, competition entries, and client sites."
   cta:
     label: "All projects"
     href: "/projects"
-
-recognition:
-  eyebrow: "Recognition"
-  heading: "Eight placements, four of them first"
-  body: >-
-    National championships and hackathons across Vienna, Prague and Brussels.
-  cta:
-    label: "Full list"
-    href: "/about"
-  items:
-    - place: "1st"
-      title: "Austrian National AI Championship"
-      org: "BWKI 2024"
-    - place: "1st"
-      title: "EUDIS Defence Hackathon"
-      org: "Prague, 2025"
-    - place: "1st"
-      title: "OpenClaw Hack_001"
-      org: "Vienna, 2026"
 
 stack:
   eyebrow: "Stack"

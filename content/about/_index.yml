@@ -1,15 +1,15 @@
 meta:
   title: "About"
-  description: "Richard Senger — software engineer in Vienna. HTL Spengergasse graduate, four-time hackathon winner, currently building agentic AI systems at Lodo Technologies in London."
+  description: "Richard Senger — software engineer in Austria. Background, how I work, and the tools I use."
 
 hero:
   eyebrow: "About"
-  headline: "Engineer, based in Vienna."
+  headline: "Engineer, based in Austria."
   intro: >-
-    I build full-stack products and applied AI systems. Most of what I have
-    shipped started as somebody's manual process — verifying schematics by
-    hand, typing criminal records into spreadsheets, tracking compliance
-    documents across a company — and ended as software that does it instead.
+    I build web platforms and machine learning systems. My background is a mix
+    of formal training and shipping things with small teams under real
+    deadlines — a diploma ERP project with a German startup, a national AI
+    championship, a handful of client sites that are still in production.
 
 portrait:
   _type: image
@@ -21,148 +21,49 @@ portrait:
 bio:
   heading: "How I work"
   body: >-
-    I like problems where the hard part is not the framework. Getting the domain
-    right comes first — how an ERP models military logistics, how a routing
-    engine scores a path against wind and current, how a compliance document
-    maps onto the data it claims to describe — and the interface should
-    disappear around it.
+    I like problems where the hard part is not the framework. Most of what I
+    have built involves getting a domain right first — how an ERP models a
+    supply chain, how a routing engine scores a path, how a compliance document
+    maps onto the data it describes — and then making the interface disappear
+    around it.
 
 
-    A lot of my experience comes from hackathons, which is a good school for
-    exactly one thing: deciding fast what does not need to be built. Eight
-    placements, four of them first, taught me to cut scope before it cuts back.
-    The rest comes from client and internal work, where the deadline is longer
-    but the code has to survive being handed over.
-
-
-    I default to boring, well-understood tools and spend the saved effort on the
-    part that is actually specific to the problem. I would rather ship something
-    small that works than something large that mostly works.
+    I default to boring, well-understood tools and spend the saved effort on
+    the parts that are actually specific to the problem. I would rather ship
+    something small that works than something large that mostly works.
 
 pillars:
   heading: "What I do"
   items:
-    - title: "Full-stack product engineering"
+    - title: "Full-stack engineering"
       body: >-
-        Schema design, API surface, and the frontend on top. Comfortable owning
-        a feature from migration to deployment, and translating a product
-        requirement into a technical spec that someone else can build from.
-    - title: "Applied AI and machine learning"
+        End-to-end product work: schema design, API surface, and the frontend
+        that sits on top. Comfortable owning a feature from migration to
+        deployment.
+    - title: "Machine learning"
       body: >-
-        Agentic architectures, custom OCR pipelines, and route optimisation
-        under real environmental constraints. Python, PyTorch and local models
-        where the data cannot leave the building.
-    - title: "DevOps and infrastructure"
+        Applied ML with Python and PyTorch — route optimisation, classification,
+        and pulling structure out of documents. Focused on systems that ship,
+        not benchmarks.
+    - title: "Web platforms"
       body: >-
-        CI/CD, containerisation and self-hosted deployment. Migrated a company
-        off SVN onto GitLab and built out the pipelines that replaced it.
+        React and Next.js with an eye on performance, accessibility and the
+        rendering model. Includes the unglamorous parts: SEO, Core Web Vitals,
+        and CMS integration.
 
-experience:
-  heading: "Experience"
+timeline:
+  heading: "Background"
+  # TODO: replace with real roles, institutions and dates.
   items:
-    - period: "Aug 2026 — Sep 2026"
-      title: "Software & Product Engineer"
-      org: "Lodo Technologies · London, England"
-      body: >-
-        Designing and developing agentic architectures and AI agent systems,
-        translating product requirements into technical specifications and
-        roadmaps. Leading market research, including planning and running user
-        interviews to validate product direction. Managing DevOps,
-        infrastructure and CI/CD pipelines across the product.
-    - period: "Nov 2024 — Present"
-      title: "Software Engineer"
-      org: "Art 4 Art Theaterservice · Hybrid"
-      body: >-
-        Setting up critical DevOps infrastructure and developing a web-based
-        client to gradually replace the legacy Java client. Migrated the company
-        from SVN to GitLab and built the pipelines around it. Java, Docker,
-        Next.js, React, Node.
-    - period: "Aug 2024"
-      title: "Software Engineering Intern"
-      org: "Art for Art Theaterservice GmbH · Vienna, Austria"
-      body: >-
-        Joined the internal dev team for prototyping and internal tooling. Built
-        a working web-based school schedule prototype for the Ballet Academy on
-        Next.js against the existing backend, and extended the BIRT report
-        template library. Presented findings to the VP of Engineering; the
-        changes were merged to production before the internship ended.
-
-education:
-  heading: "Education"
-  items:
-    - period: "Sep 2021 — Jun 2026"
-      title: "Matura, Information Technology"
-      org: "HTL Spengergasse · Vienna, Austria"
-      body: >-
-        Graduated with a GPA of 1.4 (1 being best). Thesis: "Comparison of
-        Next.js to other leading frontend frameworks", written in the context of
-        our diploma project, the ERP Scipio logistics platform.
-    - period: "Sep 2017 — Jun 2021"
-      title: "Unterstufe"
-      org: "Gymnasium Neusiedl am See · Neusiedl am See, Austria"
-      body: "Robotics class in the final two years."
-
-awards:
-  heading: "Awards & competitions"
-  body: >-
-    Eight placements across national championships and hackathons, four of them
-    first place.
-  items:
-    - date: "Mar 2026"
-      place: "1st"
-      title: "OpenClaw Hack_001 Vienna"
-      org: "HOIV & The Residency"
-      note: ""
-    - date: "May 2025"
-      place: "1st"
-      title: "EUDIS Defence Hackathon 2025"
-      org: "Prague"
-      note: ""
-    - date: "Nov 2024"
-      place: "1st"
-      title: "Austrian National AI Championship (BWKI 2024)"
-      org: "Austrian Society for Artificial Intelligence"
-      note: >-
-        For NavigAI-tor, a platform calculating kite-assisted container ship
-        routes from wave, wind and current data.
-    - date: "Nov 2024"
-      place: "Award"
-      title: "AI for Green Award, BWKI 2024"
-      org: "Austrian Society for Artificial Intelligence"
-      note: "Best solution tackling an environmental problem."
-    - date: "Jul 2024"
-      place: "3rd"
-      title: "dAGI Hackathon Brussels"
-      org: "dAGI House"
-      note: ""
-    - date: "Mar 2024"
-      place: "2nd"
-      title: "Hackathon Vienna: Corporate Coding for Sustainability"
-      org: "REWE Group, A1, Häuser zum Leben"
-      note: ""
-    - date: "Dec 2023"
-      place: "2nd"
-      title: "Crown Hackathon"
-      org: "Kronenzeitung"
-      note: ""
-    - date: "Sep 2023"
-      place: "2nd"
-      title: "Health Data Challenge"
-      org: "Dachverband der österreichischen Sozialversicherungen"
-      note: ""
+    - period: "TODO"
+      title: "TODO — role or programme"
+      org: "TODO — company or institution"
+      body: "TODO — one or two lines on what you did here."
+    - period: "TODO"
+      title: "TODO — role or programme"
+      org: "TODO — company or institution"
+      body: "TODO — one or two lines on what you did here."
 
 stack:
   heading: "Tools"
   body: "Grouped by where they sit in the stack."
-
-languages:
-  heading: "Languages"
-  items:
-    - name: "German"
-      level: "Native"
-    - name: "English"
-      level: "C1"
-    - name: "Slovak"
-      level: "B1"
-    - name: "Russian"
-      level: "A1"
