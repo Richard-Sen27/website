@@ -34,6 +34,9 @@ export default function Header({ links, siteName }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu on navigation.
+  useEffect(() => setMenuOpen(false), [pathname]);
+
   useEffect(() => {
     if (menuOpen) {
       const onKey = (event: KeyboardEvent) => {
@@ -79,7 +82,6 @@ export default function Header({ links, siteName }: HeaderProps) {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2 font-mono text-sm font-medium tracking-tight"
           >
             <span aria-hidden className="text-ink-faint">
@@ -163,7 +165,6 @@ export default function Header({ links, siteName }: HeaderProps) {
             <li key={link.href}>
               <Link
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={cx(
                   "block border-b border-line-faint py-3 text-sm last:border-0",

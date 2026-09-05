@@ -54,21 +54,18 @@ export default function SplitHeadline({
     { scope, dependencies: [text, delay] },
   );
 
-  const words = text.split(" ");
-
   return (
     <Tag ref={scope} className={className}>
-      {words.map((word, index) => (
-        <Fragment key={`${word}-${index}`}>
-          {/* The clip wrapper turns the rise into a reveal. The space sits
-              outside it, or it gets swallowed at the clip edge. */}
-          <span className="inline-block overflow-hidden pb-[0.12em] align-bottom">
-            <span data-word className="inline-block will-change-transform">
-              {word}
-            </span>
+      {text.split(" ").map((word, index) => (
+        <span
+          key={`${word}-${index}`}
+          className="inline-block overflow-hidden pb-[0.12em] align-bottom"
+        >
+          <span data-word className="inline-block will-change-transform">
+            {word}
           </span>
-          {index < words.length - 1 ? " " : null}
-        </Fragment>
+          {index < text.split(" ").length - 1 ? " " : ""}
+        </span>
       ))}
     </Tag>
   );
