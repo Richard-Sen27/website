@@ -1,25 +1,16 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import coreWebVitals from "eslint-config-next/core-web-vitals";
-import typescriptRules from "eslint-config-next/typescript";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 
-/**
- * eslint-config-next 16 ships native flat config, so the @eslint/eslintrc
- * FlatCompat bridge the old config used is no longer needed — and throws.
- */
-export default defineConfig([
-  globalIgnores([
-    ".next/**",
-    "node_modules/**",
-    "src/design/tokens.generated.ts",
-  ]),
-  coreWebVitals,
-  typescriptRules,
-  {
-    rules: {
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-      ],
-    },
-  },
-]);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+];
+
+export default eslintConfig;
