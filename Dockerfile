@@ -1,16 +1,16 @@
 # Multi-stage build for optimized Next.js production image
 
 # Dependencies stage
-FROM node:22-alpine AS deps
+FROM node:20-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package.json package-lock.json* ./
-RUN npm ci && npm cache clean --force
+RUN npm install && npm cache clean --force
 
 # Builder stage
-FROM node:22-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Copy dependencies from deps stage
@@ -25,7 +25,7 @@ ENV NODE_ENV=production
 RUN npm run build
 
 # Runner stage - minimal production image
-FROM node:22-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -39,10 +39,6 @@ RUN addgroup --system --gid 1001 nodejs && \
 
 # Copy only necessary files from builder
 COPY --from=builder /app/public ./public
-
-# copy-ink reads and writes the YAML tree at runtime for the /admin editor.
-# Next traces the import graph, not fs.readFile paths, so this is explicit.
-COPY --from=builder --chown=nextjs:nodejs /app/content ./content
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
