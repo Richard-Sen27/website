@@ -19,22 +19,22 @@ tags:
   - "Hackathon"
 
 problem: |
-  The register of processing activities a company signed off last year stops
-  being accurate as soon as someone connects a new data source, and nobody
-  finds out until the next audit. Checking properly means going through every
-  mailbox, file share and repository in the organisation by hand.
+  Compliance documentation describes systems, and systems change. The register
+  of processing activities a company signed off last year stops matching
+  reality the moment someone adds a data source — and finding out means a
+  manual audit across every mailbox, share and repository in the organisation.
 
 approach: |
-  The platform connects to the systems a company already runs, meaning mail,
-  file servers and code repositories, and works out what personal data is in
-  them and how it moves between them. That map then drives the documents GDPR
-  requires, plus a score for how complete each one is.
+  The platform connects directly to the sources a company already runs — mail,
+  file servers, code repositories — and extracts what personal data is present
+  and how it moves between them. That map then drives generation of the
+  documents GDPR requires, along with a score for how complete each one is.
 
-  Models run locally through Ollama rather than through a hosted API. The whole
-  job of this tool is reading a company's most sensitive data, so shipping that
-  data off to a third party to analyse would rather defeat the point.
+  Models run locally through Ollama rather than a hosted API. For a tool whose
+  entire job is reading a company's most sensitive data, sending that data to a
+  third party to analyse would defeat the point.
 
 outcome: |
-  Built and demoed at OpenHack Vienna. Next.js frontend, Python analysis
-  backend, PostgreSQL, and the whole thing containerised so it can run on
-  premise.
+  Built and demonstrated at OpenHack Vienna on a Next.js frontend with a Python
+  analysis backend, PostgreSQL, and the whole stack containerised for on-premise
+  deployment.

@@ -5,7 +5,7 @@ summary: >-
   verification process with a custom OCR pipeline.
 year: "2025"
 role: "Full-stack engineer"
-context: "Client project for Pörner GmbH"
+context: "Client project — Pörner GmbH"
 
 tags:
   - "Machine learning"
@@ -17,24 +17,26 @@ tags:
   - "Client work"
 
 problem: |
-  Engineering plans and the records that describe them, things like equipment
-  lists and asset registers, are supposed to agree with each other. They drift
-  apart instead, and catching that meant an engineer reading large format PDF
-  schematics against a spreadsheet by hand.
+  Engineering plans and the records that describe them — equipment lists, asset
+  registers — are supposed to agree. In practice they drift, and checking them
+  meant an engineer reading large-format PDF schematics against a spreadsheet by
+  hand.
 
-  It was worst when onboarding a new client whose plans only existed as printed
-  documents, with no structured data behind them at all.
+  The problem is worst exactly when it matters most: onboarding a new client
+  whose plans exist only as printed documents, with no structured data behind
+  them at all.
 
 approach: |
-  A custom OCR pipeline reads the schematics, pulls out the entities on them and
-  compares those against the related records. Anything missing, unreadable or
-  inconsistent gets flagged for review instead of quietly passing.
+  A custom OCR pipeline parses large-scale PDF schematics and extracts the
+  entities on them, which are then compared against the related records.
+  Anything missing, unreadable or inconsistent gets flagged for review rather
+  than silently passing.
 
-  A Flask service does the parsing and comparison, and staff work through the
-  results in a Next.js frontend. It is containerised so it can run inside the
-  client's own environment.
+  A Flask service runs the parsing and comparison; staff work through the
+  results in a Next.js frontend. The whole thing is containerised so it can run
+  inside the client's own environment.
 
 outcome: |
-  A document by document manual check became an automated pass that only
-  surfaces the discrepancies, which is what made scanned-only plan sets
-  practical to take on at all.
+  Replaced a manual document-by-document check with an automated pass that
+  surfaces only the discrepancies, which is what made scanned-only plan sets
+  tractable to onboard in the first place.

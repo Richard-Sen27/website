@@ -1,16 +1,15 @@
 meta:
   title: "About"
-  description: "Richard Senger, software engineer in Vienna. HTL Spengergasse graduate, four-time hackathon winner, currently building agentic AI systems at Lodo Technologies in London."
+  description: "Richard Senger — software engineer in Vienna. HTL Spengergasse graduate, four-time hackathon winner, currently building agentic AI systems at Lodo Technologies in London."
 
 hero:
   eyebrow: "About"
   headline: "Engineer, based in Vienna."
   intro: >-
     I build full-stack products and applied AI systems. Most of what I have
-    shipped started out as somebody doing a job by hand: checking schematics
-    against equipment lists, typing criminal records into spreadsheets, chasing
-    compliance documents around a company. Then it became software that does
-    the job instead.
+    shipped started as somebody's manual process — verifying schematics by
+    hand, typing criminal records into spreadsheets, tracking compliance
+    documents across a company — and ended as software that does it instead.
 
 portrait:
   _type: image
@@ -22,84 +21,85 @@ portrait:
 bio:
   heading: "How I work"
   body: >-
-    The interesting part of a project is usually not the framework. It is
-    working out how an ERP should model military logistics, or how a routing
-    engine should score a path against wind and current, or what a compliance
-    document is really claiming about the data behind it. Get that wrong and no
-    amount of frontend polish helps.
+    I like problems where the hard part is not the framework. Getting the domain
+    right comes first — how an ERP models military logistics, how a routing
+    engine scores a path against wind and current, how a compliance document
+    maps onto the data it claims to describe — and the interface should
+    disappear around it.
 
 
-    A lot of my experience comes from hackathons, which teach you to decide
-    quickly what does not need to be built. That habit is useful well beyond a
-    weekend deadline. The rest comes from client and internal work, where you
-    have more time but the code has to keep working after you hand it over.
+    A lot of my experience comes from hackathons, which is a good school for
+    exactly one thing: deciding fast what does not need to be built. Eight
+    placements, four of them first, taught me to cut scope before it cuts back.
+    The rest comes from client and internal work, where the deadline is longer
+    but the code has to survive being handed over.
 
 
-    I tend to reach for boring, well understood tools and spend the time I save
-    on whatever is specific to the problem. Smaller and finished beats bigger
-    and nearly there.
+    I default to boring, well-understood tools and spend the saved effort on the
+    part that is actually specific to the problem. I would rather ship something
+    small that works than something large that mostly works.
 
 pillars:
   heading: "What I do"
   items:
     - title: "Full-stack product engineering"
       body: >-
-        Schema design, API surface and the frontend on top. I am comfortable
-        owning a feature from migration through to deployment, and turning a
-        product requirement into a spec someone else can build from.
+        Schema design, API surface, and the frontend on top. Comfortable owning
+        a feature from migration to deployment, and translating a product
+        requirement into a technical spec that someone else can build from.
     - title: "Applied AI and machine learning"
       body: >-
-        Agentic architectures, custom OCR pipelines and route optimisation under
-        real environmental constraints. Python, PyTorch, and local models when
-        the data is not allowed to leave the building.
+        Agentic architectures, custom OCR pipelines, and route optimisation
+        under real environmental constraints. Python, PyTorch and local models
+        where the data cannot leave the building.
     - title: "DevOps and infrastructure"
       body: >-
-        CI/CD, containerisation and self-hosted deployment. I moved a company
-        off SVN onto GitLab and built the pipelines that replaced it.
+        CI/CD, containerisation and self-hosted deployment. Migrated a company
+        off SVN onto GitLab and built out the pipelines that replaced it.
 
 experience:
   heading: "Experience"
   items:
-    - period: "Aug 2026 - Sep 2026"
+    - period: "Aug 2026 — Sep 2026"
       title: "Software & Product Engineer"
-      org: "Lodo Technologies, London"
+      org: "Lodo Technologies · London, England"
       body: >-
-        Designing and building agentic architectures and AI agent systems, and
-        turning product requirements into technical specifications and
-        roadmaps. I also lead market research, which means planning and running
-        user interviews to check the product is going somewhere useful, and I
-        look after DevOps, infrastructure and the CI/CD pipelines.
-    - period: "Nov 2024 - Present"
+        Designing and developing agentic architectures and AI agent systems,
+        translating product requirements into technical specifications and
+        roadmaps. Leading market research, including planning and running user
+        interviews to validate product direction. Managing DevOps,
+        infrastructure and CI/CD pipelines across the product.
+    - period: "Nov 2024 — Present"
       title: "Software Engineer"
-      org: "Art 4 Art Theaterservice, hybrid"
+      org: "Art 4 Art Theaterservice · Hybrid"
       body: >-
-        Setting up DevOps infrastructure and building a web client to gradually
-        replace the legacy Java one. I migrated the company from SVN to GitLab
-        and built the pipelines around it. Java, Docker, Next.js, React, Node.
+        Setting up critical DevOps infrastructure and developing a web-based
+        client to gradually replace the legacy Java client. Migrated the company
+        from SVN to GitLab and built the pipelines around it. Java, Docker,
+        Next.js, React, Node.
     - period: "Aug 2024"
       title: "Software Engineering Intern"
-      org: "Art for Art Theaterservice GmbH, Vienna"
+      org: "Art for Art Theaterservice GmbH · Vienna, Austria"
       body: >-
-        Joined the internal dev team to work on prototypes and internal tooling.
-        I built a working web based school schedule prototype for the Ballet
-        Academy in Next.js against their existing backend, and extended their
-        BIRT report templates. I presented the results to the VP of Engineering
-        and the changes went to production before the internship ended.
+        Joined the internal dev team for prototyping and internal tooling. Built
+        a working web-based school schedule prototype for the Ballet Academy on
+        Next.js against the existing backend, and extended the BIRT report
+        template library. Presented findings to the VP of Engineering; the
+        changes were merged to production before the internship ended.
 
 education:
   heading: "Education"
   items:
-    - period: "Sep 2021 - Jun 2026"
+    - period: "Sep 2021 — Jun 2026"
       title: "Matura, Information Technology"
-      org: "HTL Spengergasse, Vienna"
+      org: "HTL Spengergasse · Vienna, Austria"
       body: >-
-        Graduated with a GPA of 1.4, where 1 is the best grade. My thesis,
-        "Comparison of Next.js to other leading frontend frameworks", came out
-        of the framework decision we made for our diploma project, the ERP
-        Scipio logistics platform.
-    - period: "Sep 2017 - Jun 2021"
+        Graduated with a GPA of 1.4 (1 being best). Thesis: "Comparison of
+        Next.js to other leading frontend frameworks", written in the context of
+        our diploma project, the ERP Scipio logistics platform.
+    - period: "Sep 2017 — Jun 2021"
       title: "Unterstufe"
-      org: "Gymnasium Neusiedl am See"
+      org: "Gymnasium Neusiedl am See · Neusiedl am See, Austria"
       body: "Robotics class in the final two years."
 
 awards:
@@ -123,8 +123,8 @@ awards:
       title: "Austrian National AI Championship (BWKI 2024)"
       org: "Austrian Society for Artificial Intelligence"
       note: >-
-        For NavigAI-tor, which works out kite assisted container ship routes
-        from wave, wind and current data.
+        For NavigAI-tor, a platform calculating kite-assisted container ship
+        routes from wave, wind and current data.
     - date: "Nov 2024"
       place: "Award"
       title: "AI for Green Award, BWKI 2024"

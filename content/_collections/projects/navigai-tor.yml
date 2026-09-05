@@ -17,20 +17,22 @@ tags:
   - "Competition"
 
 problem: |
-  A container ship under kite assistance does not want the shortest route, it
-  wants the one where the wind does the most work. Which route that is depends
-  on wave height, current and weather along every leg, and all of those keep
-  changing while the ship is still sailing.
+  A container ship under kite assistance does not want the shortest route. It
+  wants the route where the wind is doing the most work — and that depends on
+  wave height, current and weather along every leg, all of which change while
+  the ship is sailing.
+
+  The shortest path and the cheapest path are rarely the same line on the map.
 
 approach: |
-  We built a full-stack application that pulls in wind, wave and current data
-  and scores candidate routes on the fuel a kite assisted vessel would actually
-  burn along each one, instead of on distance.
+  We built a full-stack application that pulls environmental data — wind, waves,
+  currents — and scores candidate routes on the fuel a kite-assisted vessel
+  would actually burn along each one, rather than on distance.
 
-  A Python service does the routing and the environmental modelling. A Next.js
-  frontend draws the candidate routes and the trade-offs between them.
+  A Python service handles the routing and environmental modelling; a Next.js
+  frontend renders the candidate routes and the trade-offs between them.
 
 outcome: |
-  First place at the Austrian National AI Championship (BWKI 2024), plus the AI
-  for Green Award for the best solution to an environmental problem. It also
-  placed on the podium at the Moonshot Challenge 2024.
+  First place at the Austrian National AI Championship (BWKI 2024), plus the
+  AI for Green Award for the best solution tackling an environmental problem.
+  The project also placed on the podium at the Moonshot Challenge 2024.

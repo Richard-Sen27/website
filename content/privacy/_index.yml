@@ -1,9 +1,9 @@
-# Datenschutzerklärung. Covers the information duties in GDPR Art. 13.
+# Datenschutzerklärung — GDPR Art. 13 information duties.
 #
 # Covers the three processors this site actually uses: Resend (contact form),
 # Umami (analytics) and GitHub (copy-ink editor sign-in).
 #
-# TODO: have this reviewed before launch and fill in the operator address.
+# TODO — have this reviewed before launch, and fill the operator address.
 
 meta:
   title: "Privacy policy"
@@ -22,8 +22,7 @@ hero:
   headline: "Privacy policy"
   intro: >-
     What personal data this site collects, why, on what legal basis, and what
-    you can do about it. Written to cover the disclosure duties in Article 13
-    GDPR.
+    you can do about it. Written to the disclosure duties in Article 13 GDPR.
   updated: "26 August 2026"
 
 controller:
@@ -32,7 +31,7 @@ controller:
     The controller responsible for processing on this site under Article 4(7)
     GDPR is:
   name: "Richard Senger"
-  address: "TODO: street, postcode, Vienna, Austria"
+  address: "TODO — street, postcode, Vienna, Austria"
   email: "contact@richard-senger.com"
 
 hosting:
@@ -48,53 +47,52 @@ hosting:
 contactForm:
   heading: "Contact form"
   body: >-
-    Submitting the contact form sends me your name, email address and message
-    so that I can answer your enquiry. The processing rests on your consent
-    under Article 6(1)(a) GDPR, which you give by ticking the consent box, and
-    on Article 6(1)(b) where the enquiry concerns a possible contract.
+    Submitting the contact form transmits your name, email address and message
+    so I can answer your enquiry. Processing rests on your consent under
+    Article 6(1)(a) GDPR, given by ticking the consent box, and on
+    Article 6(1)(b) where the enquiry concerns a possible contract.
 
 
-    Delivery is handled by Resend (Plus Five Five, Inc., United States) acting
-    as a processor under Article 28 GDPR. The transfer to the United States is
-    covered by the EU Standard Contractual Clauses. Your message arrives in my
-    mailbox and is kept until the enquiry is settled and no statutory retention
-    period applies. To limit abuse, submissions are rate limited per email
-    address. That uses in-memory counters only and builds no profile of you.
-  processor: "Resend, resend.com/legal/privacy-policy"
+    Delivery is handled by Resend (Plus Five Five, Inc., United States), acting
+    as a processor under Article 28 GDPR. Transfer to the United States is
+    covered by the EU Standard Contractual Clauses. Your message reaches my
+    mailbox and is retained until the enquiry is settled and no statutory
+    retention period applies. To limit abuse, submissions are rate-limited per
+    email address; this uses only in-memory counters and creates no profile.
+  processor: "Resend — resend.com/legal/privacy-policy"
 
 analytics:
   heading: "Analytics"
   body: >-
-    This site uses Umami Cloud (Umami Software, Inc.) to count page views.
-    Umami sets no cookies, stores no IP addresses and creates no cross-site
+    This site uses Umami Cloud (Umami Software, Inc.) to count page views. Umami
+    sets no cookies, stores no IP addresses and creates no cross-site
     identifiers, so it collects no personal data and needs no consent banner.
-    What it records is the page path, the referrer, and rough browser, operating
-    system, device type and country. The basis is my legitimate interest in
-    knowing which pages get read, under Article 6(1)(f) GDPR.
-  processor: "Umami, umami.is/privacy"
+    What is recorded is the page path, referrer, and coarse browser, operating
+    system, device type and country. The basis is a legitimate interest in
+    understanding which pages are read, under Article 6(1)(f) GDPR.
+  processor: "Umami — umami.is/privacy"
 
 editor:
   heading: "Content editor sign-in"
   body: >-
-    The area at /admin lets the site's own content be edited in place. Signing
-    in uses GitHub OAuth (GitHub, Inc.) and creates a session cookie holding an
-    account identifier. This only applies to authorised editors. If you do not
-    sign in, no cookie is set and no editor code is sent to your browser. The
-    basis is Article 6(1)(b) GDPR.
-  processor: "GitHub, docs.github.com/site-policy"
+    An area of this site at /admin allows the site's own content to be edited
+    in place. Signing in uses GitHub OAuth (GitHub, Inc.) and creates a session
+    cookie holding an account identifier. This applies only to authorised
+    editors, not to visitors; no cookie is set and no editor code is delivered
+    unless you sign in. The basis is Article 6(1)(b) GDPR.
+  processor: "GitHub — docs.github.com/site-policy"
 
 rights:
   heading: "Your rights"
   body: >-
-    In respect of your personal data you have the right to access (Art. 15),
-    rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), data
-    portability (Art. 20) and objection (Art. 21). Where the processing is based
-    on consent, you can withdraw that consent at any time with effect for the
-    future.
+    You have the right to access (Art. 15), rectification (Art. 16), erasure
+    (Art. 17), restriction (Art. 18), data portability (Art. 20) and objection
+    (Art. 21) in respect of your personal data. Where processing is based on
+    consent, you may withdraw it at any time with effect for the future.
 
 
-    To exercise any of these, email the address listed under "Controller" above.
-    You also have the right to lodge a complaint with the Austrian Data
-    Protection Authority (Österreichische Datenschutzbehörde, Barichgasse 40-42,
+    To exercise any of these, email the address under "Controller" above. You
+    also have the right to lodge a complaint with the Austrian Data Protection
+    Authority (Österreichische Datenschutzbehörde, Barichgasse 40-42,
     1030 Vienna, dsb.gv.at).
   authority: "https://www.dsb.gv.at"

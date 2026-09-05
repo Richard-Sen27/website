@@ -1,14 +1,14 @@
 meta:
-  title: "Richard Senger | Software Engineer"
+  title: "Richard Senger — Software Engineer"
   description: "Software engineer in Vienna building full-stack products and applied AI systems. Four-time hackathon winner, currently at Lodo Technologies in London."
 
 hero:
   eyebrow: "Software Engineer · Vienna"
-  headline: "I build software that takes over the manual work."
+  headline: "I build software that replaces the manual process."
   subheadline: >-
-    Full-stack product engineering and applied AI. Most of it is ERP platforms,
-    OCR pipelines, route optimisation and compliance tooling, which is to say
-    systems that have to keep being right while people rely on them.
+    Full-stack product engineering and applied AI. ERP platforms, OCR pipelines,
+    route optimisation, compliance tooling — mostly systems that have to stay
+    correct while somebody depends on them.
   primaryCta:
     label: "See my work"
     href: "/projects"
@@ -20,8 +20,8 @@ work:
   eyebrow: "Selected work"
   heading: "Things I have shipped"
   body: >-
-    A diploma ERP platform, a national AI championship winner, an open source
-    CMS, and client work that is still running.
+    A diploma ERP platform, a national AI championship winner, and client work
+    that is still in production.
   cta:
     label: "All projects"
     href: "/projects"
@@ -29,7 +29,8 @@ work:
 recognition:
   eyebrow: "Recognition"
   heading: "Eight placements, four of them first"
-  body: "National championships and hackathons in Vienna, Prague and Brussels."
+  body: >-
+    National championships and hackathons across Vienna, Prague and Brussels.
   cta:
     label: "Full list"
     href: "/about"
@@ -47,16 +48,12 @@ recognition:
 stack:
   eyebrow: "Stack"
   heading: "What I build with"
-  body: >-
-    The tools I reach for most often. I would rather know a few of them
-    properly than collect them.
+  body: "The tools I reach for most. I care more about picking the right one than collecting them."
 
 writing:
   eyebrow: "Writing"
   heading: "Notes from the work"
-  body: >-
-    Occasional posts about engineering decisions, things that broke, and what
-    I would do differently.
+  body: "Occasional posts on engineering decisions, things that broke, and what I would do differently."
   cta:
     label: "All posts"
     href: "/blog"
