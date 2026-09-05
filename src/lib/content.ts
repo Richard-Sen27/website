@@ -103,18 +103,8 @@ export interface FooterColumn {
 
 export interface StackEntry {
   name: string;
-  /** Filename in public/tech, without extension. Omitted where none exists. */
-  icon?: string;
+  icon: string;
   group: string;
-}
-
-export interface Award {
-  date: string;
-  /** "1st", "2nd", "Award" — rendered as a rank chip. */
-  place: string;
-  title: string;
-  org: string;
-  note?: string;
 }
 
 /**
