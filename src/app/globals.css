@@ -10,7 +10,7 @@
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 
-  --text-display: clamp(2.5rem, min(1.2rem + 4.4vw, 10vh), 5rem);
+  --text-display: clamp(2.75rem, 1.6rem + 5.2vw, 6rem);
   --text-h1: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
   --text-h2: clamp(1.75rem, 1.35rem + 1.7vw, 2.75rem);
   --text-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
@@ -97,59 +97,15 @@
 
   /* GSAP sets the final state; this is the pre-hydration resting state so
    * nothing flashes in at full opacity before the timeline takes over.
-   * Guarded by .js so no-JS and reduced-motion users still see content.
-   *
-   * The hero deliberately does not use this. Its entrance is CSS (see
-   * .entrance below), so it needs no pre-hydration guard at all. */
+   * Guarded by .js so no-JS and reduced-motion users still see content. */
   .js [data-reveal],
-  .js [data-reveal-stagger] > * {
+  .js [data-reveal-stagger] > *,
+  .js [data-word] {
     opacity: 0;
   }
 }
 
 @layer components {
-  /* ---- Entrance animations ------------------------------------------
-   * CSS rather than GSAP, on purpose. The hero animates on every cold load,
-   * which is exactly when the main thread is busiest with hydration. Driving
-   * it from JS meant the timeline started mid-hydration and stuttered:
-   * measured at 5 dropped frames and a 217ms worst frame under 4x CPU
-   * throttling. As CSS it starts at first paint, runs on the compositor, and
-   * needs no JavaScript at all.
-   *
-   * `both` fill mode supplies the start state, so nothing flashes in before
-   * the animation begins and nothing is left hidden if it never runs. The
-   * reduced-motion block collapses the duration, landing on the end state. */
-  @keyframes word-rise {
-    from {
-      transform: translateY(115%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-rise {
-    from {
-      transform: translateY(1.25rem);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .entrance {
-    animation: fade-rise 0.6s var(--ease-out-expo) both;
-  }
-
-  .entrance-word {
-    display: inline-block;
-    animation: word-rise 0.9s var(--ease-out-expo) both;
-  }
-
   /* ---- Layout rails ------------------------------------------------ */
   .container-page {
     width: 100%;
@@ -430,7 +386,8 @@
   }
 
   .js [data-reveal],
-  .js [data-reveal-stagger] > * {
+  .js [data-reveal-stagger] > *,
+  .js [data-word] {
     opacity: 1;
   }
 }
