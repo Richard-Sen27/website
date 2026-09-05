@@ -21,8 +21,13 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
+# NEXT_PUBLIC_* values are inlined by `next build`, so the site URL has to be
+# a build arg rather than a runtime variable. Empty means "use the fallback in
+# src/lib/site.ts".
+ARG NEXT_PUBLIC_SITE_URL
+
 # Build Next.js app with standalone output
-RUN npm run build
+RUN if [ -z "$NEXT_PUBLIC_SITE_URL" ]; then unset NEXT_PUBLIC_SITE_URL; fi && npm run build
 
 # Runner stage - minimal production image
 FROM node:22-alpine AS runner
