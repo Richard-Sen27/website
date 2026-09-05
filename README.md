@@ -112,6 +112,16 @@ Docker, with `output: 'standalone'`. The runtime image copies `content/`
 explicitly, because Next traces the import graph rather than `fs.readFile`
 paths and the `/admin` editor reads the YAML tree at runtime.
 
+CI builds the image and, on every push to `main`, pushes it to
+`ghcr.io/richard-sen27/website` tagged `latest` and `sha-<short sha>`. The
+server pulls that image (Dokploy: provider "Docker", image
+`ghcr.io/richard-sen27/website:latest`) instead of building from source.
+
+- `NEXT_PUBLIC_SITE_URL` is baked in at build time. Set it as a repository
+  *variable* in GitHub Actions to override the default in `src/lib/site.ts`.
+- `DOKPLOY_WEBHOOK_URL` (repository *secret*, optional): when set, CI POSTs to
+  it after the push so Dokploy redeploys without a manual click.
+
 ```bash
 docker build -t website .
 docker run -p 3000:3000 -e RESEND_API_KEY=... website
