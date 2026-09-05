@@ -28,8 +28,6 @@ export const tokens = {
   "line": "#141414",
   "line-faint": "#0a0a0a",
   "line-strong": "#292929",
-  "mask-drop": "#000000",
-  "mask-keep": "#000000",
   "scrim": "#000000",
   "scrollbar-thumb": "#1f1f1f",
   "scrollbar-thumb-hover": "#3d3d3d",
