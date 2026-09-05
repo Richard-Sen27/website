@@ -3,7 +3,6 @@ summary: >-
   A git-backed inline CMS for Next.js. Clients sign into the live site, click
   the text they want to change, and their edits land in the repo as commits.
   No database, no CMS server, no second admin site to maintain.
-category: "Open source"
 year: "2026"
 role: "Author"
 context: "Open source, published on npm"

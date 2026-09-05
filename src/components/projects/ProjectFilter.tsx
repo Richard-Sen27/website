@@ -8,7 +8,7 @@ import { gsap, prefersReducedMotion } from "@/lib/motion";
 
 export interface ProjectEntry {
   slug: string;
-  category: string;
+  tags: string[];
   /** The card, rendered on the server. This component only decides visibility. */
   card: ReactNode;
 }
@@ -16,12 +16,7 @@ export interface ProjectEntry {
 const ALL = "All";
 
 /**
- * Category filter over the project grid.
- *
- * Filters on the single `category` field rather than on tags. Tags gave one
- * button per distinct tag, which came to 26 buttons for 7 projects, and most of
- * them narrowed the grid down to a single card. Categories are a short fixed
- * list defined in copy-ink.config.ts.
+ * Tag filter over the project grid.
  *
  * Filtering re-flows the grid, so surviving cards get measured before the state
  * change and tweened from their old box to the new one. A FLIP rather than a
@@ -39,20 +34,19 @@ export default function ProjectFilter({
   const positions = useRef<Map<string, DOMRect>>(new Map());
   const firstRun = useRef(true);
 
-  const categories = useMemo(() => {
+  const tags = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const entry of entries) {
-      if (entry.category) {
-        counts.set(entry.category, (counts.get(entry.category) ?? 0) + 1);
+    for (const project of entries) {
+      for (const tag of project.tags) {
+        counts.set(tag, (counts.get(tag) ?? 0) + 1);
       }
     }
-    // A filter row that cannot narrow anything is just noise.
-    if (counts.size < 2) return [];
+    // Most-used first, then alphabetical, so the row reads as a summary.
     return [
       ALL,
       ...[...counts.entries()]
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-        .map(([category]) => category),
+        .map(([tag]) => tag),
     ];
   }, [entries]);
 
@@ -60,7 +54,7 @@ export default function ProjectFilter({
     () =>
       active === ALL
         ? entries
-        : entries.filter((entry) => entry.category === active),
+        : entries.filter((project) => project.tags.includes(active)),
     [active, entries],
   );
 
@@ -115,42 +109,40 @@ export default function ProjectFilter({
 
   return (
     <div className="flex flex-col gap-8">
-      {categories.length ? (
-        <div
-          role="group"
-          aria-label="Filter projects by category"
-          className="flex flex-wrap gap-2"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              aria-pressed={active === category}
-              onClick={() => {
-                capture();
-                setActive(category);
-              }}
-              className={cx(
-                "rounded-md border px-3 py-1.5 font-mono text-xs transition-colors duration-200",
-                active === category
-                  ? "border-line-strong bg-surface-active text-ink"
-                  : "border-line bg-surface-raised text-ink-muted hover:border-line-strong hover:text-ink",
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      ) : null}
+      <div
+        role="group"
+        aria-label="Filter projects by tag"
+        className="flex flex-wrap gap-2"
+      >
+        {tags.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            aria-pressed={active === tag}
+            onClick={() => {
+              capture();
+              setActive(tag);
+            }}
+            className={cx(
+              "rounded-md border px-3 py-1.5 font-mono text-xs transition-colors duration-200",
+              active === tag
+                ? "border-line-strong bg-surface-active text-ink"
+                : "border-line bg-surface-raised text-ink-muted hover:border-line-strong hover:text-ink",
+            )}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
 
       <div
         ref={gridRef}
         aria-live="polite"
         className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
       >
-        {visible.map((entry) => (
-          <div key={entry.slug} data-slug={entry.slug}>
-            {entry.card}
+        {visible.map((project) => (
+          <div key={project.slug} data-slug={project.slug}>
+            {project.card}
           </div>
         ))}
       </div>
