@@ -18,9 +18,9 @@ const ALL = "All";
 /**
  * Tag filter over the project grid.
  *
- * Filtering re-flows the grid, so surviving cards get measured before the state
- * change and tweened from their old box to the new one. A FLIP rather than a
- * snap. Cards stay server-rendered and only their visibility is client state.
+ * Filtering re-flows the grid, so surviving cards are measured before the state
+ * change and tweened from their old box to the new one — a FLIP, rather than a
+ * snap. Cards stay server-rendered; only their visibility is client state.
  */
 export default function ProjectFilter({
   entries,

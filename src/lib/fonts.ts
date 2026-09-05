@@ -1,9 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 /**
- * Geist is Vercel's typeface and the one Next.js ships its own surfaces in,
- * which makes it the right anchor for this design direction. next/font
- * self-hosts it, so no request leaves the origin.
+ * Geist is Vercel's typeface and the one Next.js ships its own surfaces in —
+ * the right anchor for this design direction. Self-hosted by next/font, so no
+ * request leaves the origin.
  */
 export const geistSans = Geist({
   variable: "--font-geist-sans",

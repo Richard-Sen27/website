@@ -28,8 +28,8 @@ export const EASE = {
 
 /**
  * True when the visitor asked for less motion. Every timeline checks this and
- * jumps to the end state rather than animating towards it. The content still
- * arrives, it just does not move on the way in.
+ * jumps to the end state rather than animating toward it — content still
+ * arrives, it just does not move.
  */
 export function prefersReducedMotion(): boolean {
   return (
@@ -39,9 +39,9 @@ export function prefersReducedMotion(): boolean {
 }
 
 /**
- * Resolves a semantic colour token to a concrete value, for the rare tween that
- * needs one. Prefer animating a custom property directly, which keeps the colour
- * in theme.css where the lint rule can see it.
+ * Resolves a semantic colour token to a concrete value, for the rare tween
+ * that needs one. Prefer animating a custom property directly — that keeps the
+ * colour in theme.css where the lint rule can see it.
  */
 export function readToken(name: string): string {
   if (typeof window === "undefined") return "";

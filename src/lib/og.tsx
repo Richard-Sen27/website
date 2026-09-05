@@ -33,8 +33,8 @@ export function ogImage({
           position: "relative",
         }}
       >
-        {/* Accent wash, echoing the hero glow. Satori has no filter: blur(), so
-            the falloff has to come from the gradient itself. */}
+        {/* Accent wash, echoing the hero glow. Satori has no filter: blur(),
+            so the falloff has to come from the gradient itself. */}
         <div
           style={{
             position: "absolute",

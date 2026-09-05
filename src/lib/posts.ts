@@ -9,10 +9,10 @@ import readingTime from "reading-time";
 /**
  * MDX blog posts.
  *
- * Deliberately outside copy-ink's `content/` tree. copy-ink's richtext is
- * Markdown rendered by marked, which gives up code block highlighting and MDX
- * components. Posts get written in an editor, whereas page copy and the
- * projects collection are what a browser based editor is actually for.
+ * Deliberately outside copy-ink's `content/` tree: copy-ink's richtext is
+ * Markdown rendered by marked, which gives up code-block highlighting and MDX
+ * components. Posts are written in an editor, not in a CMS — page copy and the
+ * projects collection are the parts a browser-based editor is for.
  */
 
 const POSTS_DIR = join(process.cwd(), "posts");

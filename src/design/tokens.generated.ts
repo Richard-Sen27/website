@@ -1,4 +1,4 @@
-// AUTO-GENERATED. DO NOT EDIT.
+// AUTO-GENERATED — DO NOT EDIT.
 // Source: src/app/theme.css · Regenerate: npm run tokens
 //
 // Semantic colour tokens flattened to opaque sRGB hex, for the surfaces that

@@ -2,8 +2,8 @@ import { absoluteUrl, site } from "./site";
 import type { Post } from "./posts";
 
 /**
- * Structured data, emitted through a <script type="application/ld+json"> in the
- * relevant layout or page. This is what Google reads for rich results.
+ * Structured data. Emitted through a <script type="application/ld+json"> in the
+ * relevant layout or page — this is what Google reads for rich results.
  */
 
 type Json = Record<string, unknown>;

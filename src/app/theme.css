@@ -1,14 +1,14 @@
 /* ============================================================================
- * theme.css: the single source of truth for colour.
+ * theme.css — THE SINGLE SOURCE OF TRUTH FOR COLOUR
  *
  * This is the only file in the repository permitted to contain a literal
  * colour value. `npm run lint:colors` fails the build on any hex, rgb(),
  * hsl(), oklch() or Tailwind palette utility (text-zinc-500, bg-blue-600…)
  * found anywhere else under src/.
  *
- * Layer 1, PALETTE:  raw values. Never referenced by a component.
- * Layer 2, SEMANTIC: roles. This is what components consume.
- * Layer 3, @theme:   exposes layer 2 to Tailwind as utilities.
+ * Layer 1 — PALETTE      raw values. Never referenced by a component.
+ * Layer 2 — SEMANTIC     roles. This is what components consume.
+ * Layer 3 — @theme       exposes layer 2 to Tailwind as utilities.
  *
  * Retuning the brand is an edit to layer 1. Changing *where* a colour is
  * used is an edit to layer 2. Components never need to change for either.
@@ -16,10 +16,10 @@
 
 :root {
   /* ---------------------------------------------------------------------
-   * LAYER 1: PALETTE
+   * LAYER 1 — PALETTE
    * ------------------------------------------------------------------ */
 
-  /* Neutrals, on a true-black-anchored ramp. */
+  /* Neutrals — a true-black-anchored ramp. */
   --palette-neutral-1000: oklch(0% 0 0);
   --palette-neutral-990: oklch(9% 0 0);
   --palette-neutral-975: oklch(12.5% 0 0);
@@ -35,7 +35,7 @@
   --palette-neutral-100: oklch(95% 0 0);
   --palette-neutral-50: oklch(98.5% 0 0);
 
-  /* Brand, carried over from the old site's blue to cyan. */
+  /* Brand — carried over from the old site's blue → cyan. */
   --palette-brand-600: oklch(52% 0.17 255);
   --palette-brand-500: oklch(62% 0.16 253);
   --palette-brand-400: oklch(72% 0.13 251);
@@ -48,7 +48,7 @@
   --palette-amber-400: oklch(83% 0.16 85);
   --palette-red-400: oklch(69% 0.2 22);
 
-  /* Alpha whites, for hairlines, veils and glows over dark surfaces. */
+  /* Alpha whites — hairlines, veils and glows over dark surfaces. */
   --palette-alpha-02: rgb(255 255 255 / 0.02);
   --palette-alpha-04: rgb(255 255 255 / 0.04);
   --palette-alpha-06: rgb(255 255 255 / 0.06);
@@ -58,12 +58,12 @@
   --palette-alpha-24: rgb(255 255 255 / 0.24);
   --palette-alpha-64: rgb(255 255 255 / 0.64);
 
-  /* Alpha blacks, for scrims and shadows. */
+  /* Alpha blacks — scrims and shadows. */
   --palette-shadow-24: rgb(0 0 0 / 0.24);
   --palette-shadow-48: rgb(0 0 0 / 0.48);
   --palette-shadow-72: rgb(0 0 0 / 0.72);
 
-  /* Brand at low alpha, for tinted fills and glows. */
+  /* Brand at low alpha — tinted fills and glows. */
   --palette-brand-alpha-08: oklch(72% 0.13 251 / 0.08);
   --palette-brand-alpha-16: oklch(72% 0.13 251 / 0.16);
   --palette-brand-alpha-32: oklch(72% 0.13 251 / 0.32);
@@ -71,7 +71,7 @@
   --palette-transparent: rgb(0 0 0 / 0);
 
   /* ---------------------------------------------------------------------
-   * LAYER 2: SEMANTIC ROLES
+   * LAYER 2 — SEMANTIC ROLES
    * ------------------------------------------------------------------ */
 
   /* Surfaces */
@@ -114,7 +114,7 @@
   --gradient-via: var(--palette-brand-400);
   --gradient-to: var(--palette-cyan-400);
 
-  /* Decorative effects, consumed by GSAP-driven custom properties. */
+  /* Decorative effects — consumed by GSAP-driven custom properties. */
   --glow: var(--palette-brand-alpha-16);
   --glow-strong: var(--palette-brand-alpha-32);
   --spotlight: var(--palette-alpha-06);
@@ -124,8 +124,7 @@
   --fade-out: var(--palette-transparent);
 
   /* Mask stops. CSS masks default to mask-mode: alpha, so only the alpha
-   * channel matters, so any opaque colour keeps pixels and transparent drops
-   * them. */
+   * channel matters — any opaque colour keeps pixels, transparent drops them. */
   --mask-keep: var(--palette-neutral-1000);
   --mask-drop: var(--palette-transparent);
 
@@ -152,7 +151,7 @@
 }
 
 /* ---------------------------------------------------------------------
- * LAYER 3: Tailwind utility exposure.
+ * LAYER 3 — Tailwind utility exposure.
  *
  * `@theme inline` keeps the var() reference intact rather than resolving
  * it, so utilities stay live against layer 2 and can be overridden per

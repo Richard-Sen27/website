@@ -4,12 +4,12 @@ import { tokens } from "@/design/tokens.generated";
  * Notification email for a contact form submission.
  *
  * Mail clients support neither CSS custom properties nor oklch, so colours come
- * from the generated token mirror, already flattened to opaque sRGB hex. That
+ * from the generated token mirror — already flattened to opaque sRGB hex. That
  * keeps the email in step with the site instead of drifting, which is what the
- * hand-maintained palette that used to live in this file did.
+ * previous hand-maintained palette in this file did.
  *
- * Table-based layout and inline styles are deliberate, since Outlook ignores
- * most of what a <style> block says.
+ * Table-based layout and inline styles on purpose: Outlook ignores most of what
+ * a <style> block says.
  */
 export function contactEmailHtml({
   name,
@@ -38,7 +38,7 @@ export function contactEmailHtml({
   </head>
   <body style="margin:0;padding:0;background:${tokens.surface};">
     <div style="display:none;max-height:0;overflow:hidden;opacity:0;">
-      ${name} &lt;${email}&gt;: ${message.slice(0, 120)}
+      ${name} &lt;${email}&gt; — ${message.slice(0, 120)}
     </div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
            style="background:${tokens.surface};padding:40px 16px;">
