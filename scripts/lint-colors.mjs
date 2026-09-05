@@ -77,27 +77,12 @@ for (const dir of ROOTS) {
     const rel = relative(root, file).split("\\").join("/");
     if (ALLOWED.has(rel)) continue;
 
-    const isMarkdown = /\.mdx?$/.test(rel);
-    let inFence = false;
-
     const lines = readFileSync(file, "utf8").split("\n");
     lines.forEach((line, index) => {
-      // Fenced blocks in Markdown are code samples, not applied styling — a post
-      // about the token system quotes colour values on purpose. Inline JSX in
-      // MDX sits outside fences and is still checked.
-      if (isMarkdown && /^\s*(```|~~~)/.test(line)) {
-        inFence = !inFence;
-        return;
-      }
-      if (inFence) return;
       if (/lint-colors-disable-line/.test(line)) return;
-
-      // Inline code spans are prose quoting a value, same as a fence.
-      const subject = isMarkdown ? line.replace(/`[^`]*`/g, "") : line;
-
       for (const rule of RULES) {
         rule.pattern.lastIndex = 0;
-        const match = rule.pattern.exec(subject);
+        const match = rule.pattern.exec(line);
         if (match) {
           violations.push({
             file: rel,
