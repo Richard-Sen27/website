@@ -32,6 +32,11 @@ interface TimelineEntry {
   body: string;
 }
 
+interface Language {
+  name: string;
+  level: string;
+}
+
 export function generateMetadata(): Promise<Metadata> {
   return metadataForScope(SCOPE, "/about");
 }
@@ -47,6 +52,7 @@ export default async function AboutPage() {
   const experience = objectList<TimelineEntry>(copy, "experience.items");
   const education = objectList<TimelineEntry>(copy, "education.items");
   const awards = objectList<Award>(copy, "awards.items");
+  const languages = objectList<Language>(copy, "languages.items");
   const stack = objectList<StackEntry>(global, "stack");
   const socials = objectList<SocialLink>(global, "socials");
 
@@ -150,6 +156,24 @@ export default async function AboutPage() {
         <StackGrid stack={stack} />
       </Section>
 
+      {languages.length ? (
+        <Section>
+          <SectionHeader heading={copy.get("languages.heading")} />
+          <Reveal stagger className="flex flex-wrap gap-2">
+            {languages.map((language) => (
+              <span
+                key={language.name}
+                className="inline-flex items-baseline gap-2 rounded-lg border border-line bg-surface-raised px-3 py-2 text-sm text-ink"
+              >
+                {language.name}
+                <span className="font-mono text-xs text-ink-faint">
+                  {language.level}
+                </span>
+              </span>
+            ))}
+          </Reveal>
+        </Section>
+      ) : null}
     </>
   );
 }
