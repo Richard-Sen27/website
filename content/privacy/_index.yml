@@ -2,8 +2,6 @@
 #
 # Covers the three processors this site actually uses: Resend (contact form),
 # Umami (analytics) and GitHub (copy-ink editor sign-in).
-#
-# TODO: have this reviewed before launch and fill in the operator address.
 
 meta:
   title: "Privacy policy"
@@ -32,7 +30,7 @@ controller:
     The controller responsible for processing on this site under Article 4(7)
     GDPR is:
   name: "Richard Senger"
-  address: "TODO: street, postcode, Vienna, Austria"
+  address: "Spengergasse 20, 1050 Vienna, Austria"
   email: "contact@richard-senger.com"
 
 hosting:

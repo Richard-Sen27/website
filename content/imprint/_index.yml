@@ -1,8 +1,4 @@
 # Offenlegung nach § 5 ECG, § 14 UGB und § 25 MedienG.
-#
-# TODO: the placeholders below need real data before this goes live. An
-# incomplete Impressum is an administrative offence in Austria. Everything here
-# is locked, so it stays readable but can never be edited inline.
 
 meta:
   title: "Imprint"
@@ -23,8 +19,8 @@ hero:
 operator:
   heading: "Media owner and publisher"
   name: "Richard Senger"
-  street: "TODO: street and number"
-  postcode: "TODO: postcode"
+  street: "Spengergasse 20"
+  postcode: "1050"
   city: "Vienna"
   country: "Austria"
 
