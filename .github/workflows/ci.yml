@@ -46,3 +46,43 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: npm run build
+
+  # The server has 3.7GB and runs Dokploy itself, which leaves too little for
+  # `next build` — an unbounded build takes the host down with it. So the image
+  # is built here, where there is memory, and the server only pulls.
+  #
+  # Pull requests are checks only: `verify` already runs the same `next build`,
+  # so building the image again would prove nothing.
+  image:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    needs: verify
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/richard-sen27/website:latest
+            ghcr.io/richard-sen27/website:sha-${{ github.sha }}
+          # Empty falls back to the URL in src/lib/site.ts. Inlined at build
+          # time, and copy-ink's OAuth redirect is derived from it.
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=${{ vars.NEXT_PUBLIC_SITE_URL }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
