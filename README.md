@@ -112,7 +112,12 @@ Docker, with `output: 'standalone'`. The runtime image copies `content/`
 explicitly, because Next traces the import graph rather than `fs.readFile`
 paths and the `/admin` editor reads the YAML tree at runtime.
 
-The server builds the image from source.
+The server builds the image from source. `next build` forks one static worker
+per CPU minus one, and `os.cpus()` inside a container reports the host's cores
+rather than the container's quota, so an unbounded build fans out far enough to
+OOM the host the moment Next dispatches workers to collect page data.
+`next.config.ts` pins the count to one for that reason; `NEXT_BUILD_CPUS`
+raises it where there is memory to spare.
 
 `NEXT_PUBLIC_SITE_URL` is inlined by `next build`, so it is a build arg rather
 than a runtime variable. Leave it unset to fall back to the default in
