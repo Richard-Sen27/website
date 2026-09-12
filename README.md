@@ -112,15 +112,16 @@ Docker, with `output: 'standalone'`. The runtime image copies `content/`
 explicitly, because Next traces the import graph rather than `fs.readFile`
 paths and the `/admin` editor reads the YAML tree at runtime.
 
-CI builds the image and, on every push to `main`, pushes it to
-`ghcr.io/richard-sen27/website` tagged `latest` and `sha-<short sha>`. The
-server pulls that image (Dokploy: provider "Docker", image
-`ghcr.io/richard-sen27/website:latest`) instead of building from source.
+The server builds the image from source. `next build` forks one static worker
+per CPU minus one, and `os.cpus()` inside a container reports the host's cores
+rather than the container's quota, so an unbounded build fans out far enough to
+OOM the host the moment Next dispatches workers to collect page data.
+`next.config.ts` pins the count to one for that reason; `NEXT_BUILD_CPUS`
+raises it where there is memory to spare.
 
-- `NEXT_PUBLIC_SITE_URL` is baked in at build time. Set it as a repository
-  *variable* in GitHub Actions to override the default in `src/lib/site.ts`.
-- `DOKPLOY_WEBHOOK_URL` (repository *secret*, optional): when set, CI POSTs to
-  it after the push so Dokploy redeploys without a manual click.
+`NEXT_PUBLIC_SITE_URL` is inlined by `next build`, so it is a build arg rather
+than a runtime variable. Leave it unset to fall back to the default in
+`src/lib/site.ts`.
 
 ```bash
 docker build -t website .
@@ -131,4 +132,5 @@ docker run -p 3000:3000 -e RESEND_API_KEY=... website
 contact form returns a 500 and everything else works. See `.env.example`.
 
 CI (`.github/workflows/ci.yml`) runs the colour lint, the token mirror
-staleness check, `copy-ink check`, lint, typecheck, build, and a Docker build.
+staleness check, `copy-ink check`, lint, typecheck and build. Checks only: it
+builds no image and publishes nothing.
