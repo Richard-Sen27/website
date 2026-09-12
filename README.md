@@ -112,16 +112,22 @@ Docker, with `output: 'standalone'`. The runtime image copies `content/`
 explicitly, because Next traces the import graph rather than `fs.readFile`
 paths and the `/admin` editor reads the YAML tree at runtime.
 
-The server builds the image from source. `next build` forks one static worker
-per CPU minus one, and `os.cpus()` inside a container reports the host's cores
-rather than the container's quota, so an unbounded build fans out far enough to
-OOM the host the moment Next dispatches workers to collect page data.
-`next.config.ts` pins the count to one for that reason; `NEXT_BUILD_CPUS`
-raises it where there is memory to spare.
+CI builds the image and pushes it to `ghcr.io/richard-sen27/website`, tagged
+`latest` and `sha-<sha>`. The server pulls it (Dokploy: provider "Docker",
+image `ghcr.io/richard-sen27/website:latest`) and never builds.
+
+That split is deliberate. The server has 3.7GB and runs Dokploy itself, leaving
+under 1GB free. `next build` forks one static worker per CPU minus one, and
+`os.cpus()` inside a container reports the host's cores rather than the
+container's quota, so a build there fans out until the OOM killer takes the
+whole host down. `next.config.ts` pins the worker count to one so a local or
+small-host build stays survivable; `NEXT_BUILD_CPUS` raises it where there is
+memory to spare. Keeping builds off the server is what actually fixes it.
 
 `NEXT_PUBLIC_SITE_URL` is inlined by `next build`, so it is a build arg rather
-than a runtime variable. Leave it unset to fall back to the default in
-`src/lib/site.ts`.
+than a runtime variable, settable as a repository *variable*. Leave it unset to
+fall back to the default in `src/lib/site.ts`. copy-ink's OAuth redirect is
+derived from it, so it has to match the callback URL on the GitHub App.
 
 ```bash
 docker build -t website .
@@ -132,5 +138,5 @@ docker run -p 3000:3000 -e RESEND_API_KEY=... website
 contact form returns a 500 and everything else works. See `.env.example`.
 
 CI (`.github/workflows/ci.yml`) runs the colour lint, the token mirror
-staleness check, `copy-ink check`, lint, typecheck and build. Checks only: it
-builds no image and publishes nothing.
+staleness check, `copy-ink check`, lint, typecheck and build on every pull
+request. Pushes to `main` additionally build and publish the image.
