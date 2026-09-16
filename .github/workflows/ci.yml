@@ -53,9 +53,13 @@ jobs:
   #
   # Pull requests are checks only: `verify` already runs the same `next build`,
   # so building the image again would prove nothing.
+  #
+  # The server is arm64, so the image is built on a native arm runner. An
+  # amd64 image pulls fine but dies on start with `exec format error`, and
+  # cross-building under QEMU would make `next build` take most of an hour.
   image:
     if: github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     needs: verify
     permissions:
       contents: read
@@ -75,6 +79,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          platforms: linux/arm64
           push: true
           tags: |
             ghcr.io/richard-sen27/website:latest
