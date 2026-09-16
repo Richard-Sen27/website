@@ -87,7 +87,7 @@ export default async function AboutPage() {
                 width={portrait.width ?? 320}
                 height={portrait.height ?? 320}
                 priority
-                className="size-40 rounded-xl border border-line object-cover md:size-56"
+                className="h-auto w-40 rounded-xl border border-line md:w-56"
               />
             </Reveal>
           ) : null}

@@ -14,10 +14,10 @@ hero:
 
 portrait:
   _type: image
-  src: "/black-white-face.webp"
+  src: "/portrait.webp"
   alt: "Portrait of Richard Senger"
-  width: 320
-  height: 320
+  width: 224
+  height: 336
 
 bio:
   heading: "How I work"
